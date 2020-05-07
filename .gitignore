@@ -1,0 +1,7 @@
+.vscode
+
+# npm
+node_modules
+
+# dist file
+dist
