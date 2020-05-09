@@ -1,7 +1,12 @@
 .vscode
+*.log
 
 # npm
 node_modules
 
-# dist file
-dist
+# blog file
+blog
+
+#config
+/docs/.vuepress/config.js
+*.pptx

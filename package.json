@@ -1,5 +1,14 @@
 {
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
   "devDependencies": {
-    "vuepress": "^1.4.1"
+    "@vuepress/plugin-active-header-links": "^1.4.1",
+    "@vuepress/plugin-back-to-top": "^1.4.1",
+    "@vuepress/plugin-medium-zoom": "^1.4.1",
+    "@vuepress/shared-utils": "^1.4.1",
+    "vuepress": "^1.4.1",
+    "vuepress-plugin-auto-sidebar": "^1.4.1"
   }
 }
