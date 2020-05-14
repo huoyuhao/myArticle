@@ -7,6 +7,3 @@ node_modules
 # blog file
 blog
 
-#config
-/docs/.vuepress/config.js
-*.pptx
