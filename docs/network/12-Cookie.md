@@ -34,7 +34,7 @@ Cookie是存储在用户本地的，可持久化一段时间（可以自行设�
 | HttpOnly | 可选。规定无法通过 `JS 脚本` 读取到该 cookie 的信息，只有在http请求头中会带有此cookie的信息 |
 
 :::tip
-secure：安全设置，指明必须通过 安全的通信通道来传输（https) 才能获得 cookie,true 不安全，默认值；false 安全，必须通过 https 来访问。
+secure：安全设置，指明必须通过 安全的通信通道来传输（https) 才能获得 cookie，true 不安全，默认值；false 安全，必须通过 https 来访问。
 :::
 
 
