@@ -1,20 +1,11 @@
 # My Article
 
-
-
 18年毕业以来一直在简书上写个人博客，主要是觉得自己的技术还没有达标，现在准备对自己一年半的学习进行总结，并且输出为文章。
 
 主要规划是以下几个主题
-+ XSS 攻击 如何避免
-+ csrf攻击 
-
-
-
 
 + http 3
 + https为什么加载缓慢，解决方案
-+ get post请求区别 https://blog.fundebug.com/2019/02/22/compare-http-method-get-and-post/
-
 
 
 
