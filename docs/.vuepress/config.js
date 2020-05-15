@@ -17,6 +17,7 @@ module.exports = {
       { text: 'Js', link: '/js/' },
       { text: 'Vue', link: '/vue/' },
       { text: 'HTML', link: '/html/' },
+      { text: 'Linux', link: '/linux/' },
       { text: '好文留存', link: '/other/' },
       { text: 'GitHub', link: 'https://github.com/huoyuhao/myArticle' },
     ],
