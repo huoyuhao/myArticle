@@ -1,13 +1,11 @@
 # My Article
 
-18年毕业以来一直在简书上写个人博客，主要是觉得自己的技术还没有达标，现在准备对自己一年半的学习进行总结，并且输出为文章。
+毕业以来一直在简书上写个人博客，主要是觉得自己的技术还没有达标，现在准备对自己一年半的学习进行总结，并且输出为文章。
 
 主要规划是以下几个主题
 
 + http 3
 + https为什么加载缓慢，解决方案
-
-
 
 2、网站优化
 + dns预解析
@@ -43,21 +41,13 @@
 + 图片懒加载
 + 骨架屏
 
-3、Js基础
-+ 闭包
-+ 原型链 https://juejin.im/post/5bcb2e295188255c55472db0
-+ 继承
-+ 作用域
-+ 作用域链
-+ new
-+ call bind apply
-+ 跨域 https://blog.csdn.net/u010430495/article/details/79131498
-+ this、原型、一些设计模式
-+ 宏任务 微任务 https://www.jianshu.com/p/4f91b492c0d9
 
-4、css
+
+、css
 + 使用css画一个扇形
 https://github.com/haizlin/fe-interview/issues/527
+
+
 
 5、ES6
 + 箭头函数 this指向
