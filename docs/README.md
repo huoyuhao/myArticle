@@ -3,7 +3,7 @@ home: true
 heroImage: /logo.png
 heroText: 程序员的三种美德
 tagline: 前端学习
-actionText: 快速上手 →
+actionText: 开始学习 →
 actionLink: /js/
 features:
 - title: 懒惰：
