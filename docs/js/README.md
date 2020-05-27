@@ -1,11 +1,9 @@
 
 # Js学习
 + 数据类型 判断 转换
-+ 闭包
++ 执行上下文 变量提升 作用域 作用域链 闭包
 + 原型链 https://juejin.im/post/5bcb2e295188255c55472db0
 + 继承
-+ 作用域
-+ 作用域链
 + new
 + call bind apply
 + 跨域 https://blog.csdn.net/u010430495/article/details/79131498
