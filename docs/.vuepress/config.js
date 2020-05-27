@@ -13,12 +13,12 @@ module.exports = {
   themeConfig: { // 导航栏配置
     nav: [
       { text: '首页', link: '/' },
-      { text: '网络', link: '/network/' },
       { text: 'Js', link: '/js/' },
       { text: 'Vue', link: '/vue/' },
       { text: 'HTML', link: '/html/' },
       { text: 'Linux', link: '/linux/' },
-      { text: '好文留存', link: '/other/' },
+      { text: '网络', link: '/network/' },
+      { text: '其他', link: '/other/' },
       { text: 'GitHub', link: 'https://github.com/huoyuhao/myArticle' },
     ],
   },
