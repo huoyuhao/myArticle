@@ -11,6 +11,7 @@ meta:
 因特网上的一个服务，将域名和IP地址相互映射的一个分布式数据库，能让用户更方便的访问互联网，而不是通过IP地址去读取。
 
 下面具体介绍浏览器DNS解析域名的过程
+
 + 浏览器DNS缓存。浏览器会检查浏览器DNS缓存中是否有这个域名对应的解析过的IP地址，如果有，域名解析结束，使用对应的IP地址；
 
 + 操作系统DNS缓存。如果浏览器缓存没有，那么就检查操作系统的hosts文件，比如windows就是C:\Windows\System32\drivers\etc\hosts文件，linux在/etc/hosts文件中配置；
@@ -23,7 +24,6 @@ meta:
 
 + Name server域名服务器。Name server域名服务器地址会根据域名和IP对应关系表，找到对应的IP记录，返回给本地域名服务器。本地域名服务器会缓存域名和IP的对应关系，并返回。本机同时也缓存在本地系统中，到此域名解析完成。
 
-
 ![DNS解析过程](/img/NDS解析.png)
 
-> 在url地址栏输入chrome://net-internals/#dns可以查看chrome浏览器的dns缓存信息。
+> 在url地址栏输入chrome://net-internals/#dns可以查看chrome浏览器的dns缓存信息
