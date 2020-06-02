@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>JSONP跨域</title>
+</head>
+<body ontouchstart="">
+  <script type="text/javascript">
+    function callback (data){
+      //处理获得的json数据
+      console.log(data)
+    }
+  </script>
+  <script src="http://www.node.huoyuhao.net/crossDomain?callback=callback"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>postMessage 跨域</title>
+</head>
+<body>
+  <div>A页面</div>
+  <iframe src="http://www.node.huoyuhao.net/static/crossDomain/05/b.html" style='display: none;'></iframe>
+  <script>
+  window.onload = function() {
+    var targetOrigin = 'http://www.node.huoyuhao.net'
+    var data = {
+      name: 'yuhoo',
+      time: '2020.06.02'
+    }
+    // 向 b.html 发送消息
+    window.frames[0].postMessage(data, targetOrigin)
+
+    // 接收 b.html 发送的数据
+    window.addEventListener('message', function(e) {
+      console.log('data from node.huoyuhao.net', e.data)
+    })
+  }
+  </script>
+</body>
+</html>

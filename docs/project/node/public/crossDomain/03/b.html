@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>document.hash + iframe跨域</title>
+</head>
+<body>
+  <div>B页面</div>
+  <iframe style = "display: none" id = "iframe" src="http://www.test.huoyuhao.net/static/crossDomain/03/c.html" frameborder="0"></iframe>
+  <script type="text/javascript">
+    var iframe = document.getElementById('iframe')
+    // 监听a.html传来的hash值，再传给c.html
+    window.onhashchange = function () {
+      console.log('B页面Hash值：' + location.hash)
+      iframe.src = iframe.src + location.hash
+    }
+  </script>
+</body>
+</html>

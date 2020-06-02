@@ -8,24 +8,6 @@ meta:
 
 # Linux常用命令
 
-## Node & Npm
-
-```js
-// 最新版本安装方法
-sudo apt install nodejs-legacy
-sudo apt install npm
-
-// 升级npm为最新版本
-sudo npm install npm@latest -g
-npm install npm@4 -g // 4是版本号
-
-// 安装用于安装nodejs的模块n
-sudo npm install -g n sudo n latest // 安装官方最新版本
-sudo n stable // 安装官方稳定版本
-sudo n lts // 安装官方最新LTS版本
-n 8.10.0 // 安装8.10.0版本
-```
-
 ## Nginx
 
 ```js
@@ -74,6 +56,7 @@ df -hl  // df命令是linux系统以磁盘分区为单位查看文件系统，�
 kill 00 // 关闭nginx或者响应进程
 sudo chmod -R 777 www // 更改www目录权限
 netstat -tpln         // 查看项目端口
+kill -9 2238 // 杀死进程PID为2238的进程
 sudo passwd root      // 设置root密码
 chkconfig --list      //查看开机启动服务列表
 ```

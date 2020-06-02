@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>postMessage 跨域</title>
+</head>
+<body>
+  <div>A页面</div>
+  <script>
+  // 接收test.huoyuhao.net的数据
+  window.addEventListener('message', function(e) {
+    console.log('data from test.huoyuhao.net ---> ' + JSON.stringify(e.data))
+    var data = e.data
+    if (data) {
+      data.name = 'huoyuhao'
+      // 处理后再发回test.huoyuhao.net
+      window.parent.postMessage(JSON.stringify(data), 'http://www.test.huoyuhao.net')
+    }
+  }, false)
+</script>
+</body>
+</html>

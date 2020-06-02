@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>document.hash + iframe跨域</title>
+</head>
+<body>
+  <div>C页面</div>
+  <script type="text/javascript">
+    // 监听b.html传来的hash值
+    window.onhashchange = function () {
+      // 再通过操作同域a.html的js回调，将结果传回
+      console.log('C页面Hash值：' + location.hash)
+      window.parent.parent.onCallback('hello: ' + location.hash.replace('#name=', ''))
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>window.name + iframe跨域</title>
+</head>
+<body>
+  <div>A页面</div>
+  <script type="text/javascript">
+  var proxy = function(url, callback) {
+    var state = 0
+    var iframe = document.createElement('iframe')
+    // 加载跨域页面
+    iframe.src = url
+    iframe.onload = function() {
+      if (state === 1) {
+        // 第2次onload(同域proxy页)成功后，读取同域window.name中数据
+        callback(iframe.contentWindow.name)
+        destroyFrame()
+
+      } else if (state === 0) {
+        // 第1次onload(跨域页)成功后，切换到同域代理页面
+        iframe.src = 'about:blank' // 或者将里面的 about:blank 替换成某个同源页面
+        state = 1
+      }
+    }
+    document.body.appendChild(iframe)
+
+    // 获取数据以后销毁这个iframe，释放内存；这也保证了安全（不被其他域frame js访问）
+    function destroyFrame() {
+      iframe.contentWindow.document.write('')
+      iframe.contentWindow.close()
+      document.body.removeChild(iframe)
+    }
+  }
+
+  // 请求跨域b页面数据
+  proxy('http://www.node.huoyuhao.net/static/crossDomain/04/b.html', function(data){
+    console.log(data)
+  })
+  </script>
+</body>
+</html>

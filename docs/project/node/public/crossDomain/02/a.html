@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>document.domain + iframe跨域</title>
+  <script type="text/javascript" src = "https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+  <div>A页面</div>
+  <iframe style = "display: none" id = "iframe" src="http://www.node.huoyuhao.net/static/crossDomain/02/b.html" frameborder="0" onload="iframeLoad()"></iframe>
+  <script type="text/javascript">
+    $(function () {
+      try {
+        document.domain = "huoyuhao.net"
+      } catch (e) {}
+    })
+    function iframeLoad (data) {
+      var jq = document.getElementById('iframe').contentWindow.$
+      jq.get("http://www.node.huoyuhao.net/crossDomain2", function(data){
+        console.log(data)
+      })
+    }
+    
+    $.get("http://www.node.huoyuhao.net/crossDomain2", function(data){
+      console.log(data)
+    })
+  </script>
+</body>
+</html>

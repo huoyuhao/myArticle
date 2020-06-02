@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>document.hash + iframe跨域</title>
+</head>
+<body>
+  <div>A页面</div>
+  <iframe style = "display: none" id = "iframe" src="http://www.node.huoyuhao.net/static/crossDomain/03/b.html" frameborder="0"></iframe>
+  <script type="text/javascript">
+    var iframe = document.getElementById('iframe')
+    // 向b.html传hash值
+    setTimeout(function() {
+      iframe.src = iframe.src + '#name=yuhoo'
+    }, 1000)
+    // 开放给同域c.html的回调方法
+    function onCallback(res) {
+      console.log('A回调函数：' + res)
+    }
+  </script>
+</body>
+</html>
