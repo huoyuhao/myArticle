@@ -14,8 +14,8 @@ module.exports = {
     nav: [
       { text: '首页', link: '/' },
       { text: 'Js', link: '/js/' },
-      { text: 'Vue', link: '/vue/' },
-      { text: 'HTML', link: '/html/' },
+      // { text: 'Vue', link: '/vue/' },
+      // { text: 'HTML', link: '/html/' },
       { text: 'Linux', link: '/linux/' },
       { text: 'Tool', link: '/tool/' },
       { text: '网络', link: '/network/' },
