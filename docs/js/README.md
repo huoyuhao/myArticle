@@ -9,11 +9,11 @@ meta:
 
 + 数据类型 判断 转换
 + 执行上下文 变量提升 作用域 作用域链 闭包
++ this call bind apply 箭头函数
 + 跨域
 + 宏任务 微任务
 
-+ [原型链](https://juejin.im/post/5bcb2e295188255c55472db0) 继承 new 原型
-+ this call bind apply 箭头函数
++ 原型链 继承 new 原型
 + let const区别
 + promise\await
 
