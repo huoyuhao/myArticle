@@ -19,6 +19,7 @@ module.exports = {
       { text: 'Linux', link: '/linux/' },
       { text: 'Tool', link: '/tool/' },
       { text: '网络', link: '/network/' },
+      { text: 'Cat', link: '/cat/' },
       { text: 'GitHub', link: 'https://github.com/huoyuhao/myArticle' },
     ],
   },

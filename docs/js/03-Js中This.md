@@ -35,15 +35,30 @@ meta:
 当一个函数被当作一个对象的方法调用的时候
 
 ```js
+function test () {
+  console.log(this.name)
+}
 var obj = {
   name: 'yuhoo',
-  getName: function () {
-    console.log(this.name)
+  foo: test
+}
+obj.foo() // yuhoo
+```
+
+在 js 中一切都是对象，函数也是一个对象，对于 `test` ，它只是一个函数名，函数的引用，它指向这个函数，当 `foo = test`，`foo` 同样也指向了这个函数
+
+```js
+var obj = {
+  name: 'yuhoo',
+  foo: function () {
+    console.log(this)
   }
 }
-obj.getName()
-// 'yuhoo'
-这时候，`this` 指向当前的这个对象；
+var test = obj.foo
+test() // Window
+```
+
+当我们把 `test = obj.foo` ，`test` 直接指向了一个函数的引用，这时候，其实和 `obj` 这个对象没有关系了，所以，它是被当作一个普通函数来直接调用，因此，`this` 指向全局对象。
 
 ## call/bind/apply
 
