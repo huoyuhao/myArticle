@@ -1,119 +1,311 @@
+---
+meta:
+  - name: description
+    content: 前端HTML代码规范
+  - name: keywords
+    content: 前端规范,前端HTML代码规范,HTML,前端,规范,命名规范,HTML规范
+---
+
 # HTML代码规范
 
-## HTML规范
+## 代码风格
 
+### 缩进&换行
 
+#### 使用 4 个空格做为一个缩进层级，不允许使用 2 个空格 或 tab 字符
 
+#### 每行不得超过 120 个字符
 
+**解释：**过长的代码不容易阅读与维护。但是考虑到 HTML 的特殊性，不做硬性要求。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### HTML的命名
+### 命名
 
 #### 1. HTML文件命名
 
 + 引文件统一使用index.htm index.html index.asp文件名（小写）
-+ 各子页命名的原则首先应该以栏目名的英语翻译取单一单词为名称。例如：
-+ 如果栏目名称多而复杂并不好以英文单词命名，则统一使用该栏目名称拼音或拼音的首字母表示；
-
-```code
-关于我们 \ about
-信息反馈 \ feedback
-产 品 \ product
-```
++ 各子页命名的原则首先应该以栏目名的英语翻译取单一单词为名称
++ 如果栏目名称多而复杂并不好以英文单词命名，则统一使用该栏目名称拼音或拼音的首字母表示
 
 #### 2. 标签自定义属性命名
 
-标签的自定义属性以data-开头，后面跟小写单词，多单词使用下划线连接如：`<a data-goods_num='18' href="javascript:;" ></a>`
+标签的自定义属性以data-开头，后面跟小写单词，多单词使用下划线连接如：`<a data-推荐s_num='18' href="javascript:;" ></a>`
 
-### 图片的命名
+#### 3. name 与 id
 
-图片的名称分为头尾两部分，用下划线隔开，头部分表示此图片的大类性质
-例如：广告、标志、菜单、按钮等等。
+同一页面，应避免使用相同的 **name 与 id**
 
-+ 放置在页面顶部的广告、装饰图案等长方形的图片取名： banner
-+ 标志性的图片取名为： logo
-+ 在页面上位置不固定并且带有链接的小图片我们取名为 button
-+ 在页面上某一个位置连续出现，性质相同的链接栏目的图片我们取名： menu
-+ 装饰用的照片我们取名： pic
-+ 不带链接表示标题的图片我们取名： title
+**解释：**IE 浏览器会混淆元素的 id 和 name 属性， document.getElementById 可能获得不期望的元素。所以在对元素的 id 与 name 属性的命名需要非常小心
 
-范例：`banner_news.gif banner_intro.gif menu_about.gif menu_job.gif title_news.gif logo_police.gif logo_national.gif pic_people.jpg`
+一个比较好的实践是，为 id 和 name 使用不同的命名法。
 
-### javascript的命名
+```html
+<input name="foo">
+<div id="foo"></div>
+<script>
+// IE6 将显示 INPUT
+alert(document.getElementById('foo').tagName);
+</script>
+```
 
-#### 1. 变量命名
-
-+ JS变量要求是纯英文小写字母，下划线分割，如：my_name
-+ 常量采用全大写方式， 以下划线分隔；eg：MAX_COUNT
-+ 要求变量集中声明，避免全局变量
-
-#### 2. 类命名
-
-首字母大写，驼峰式命名，如：MyStudent
-
-#### 3. 函数命名
-
-+ 函数名采用驼峰命名，以动词开始。getName()
-+ 返回类型是布尔类型，一般以is开头，eg: isEnable()
-+ 变量和函数命名，不要担心长度，一定要语义化合乎逻辑。eg: saveImageToPhotosAlbum()
-
-#### 4. 命名语义化，尽可能利用英文单词或其缩写
-
-### CSS命名
-
-#### 1. class与id命名
-
-+ id命名使用小驼峰命名，如：`userID`
-+ class命名使用由 小写英文和 - 来组合命名, 如：`banner-container`
-+ 避免使用中文拼音, 尽量使用简易的单词组合， 命名要语义化, 简明化.
-
-#### 2. 规避class与id命名
-
-a, 通过从属写法规避, 示例见d;
-
-b, 取父级元素id/class命名部分命名, 示例见d;
-
-c, 重复使用率高的命名, 请以自己代号加中划线起始, 如：yuhoo-banner-container;
-
-d, a,b两条, 适用于在2中已建好框架的页面, 如：要在2中已建好框架的页面代码`<div id="myCard"></div>`中加入新的div元素
-
-按a命名法则: `<div id="myCard"><div class="first-card">...</div></div>`
-
-按b命名法则: `<div id="myCard"><div class="my-first-card">...</div></div>`
-
-## 文件存放位置命名
+#### 4. 文件存放位置命名
 
 + 图片文件：images
 + 存放javascript 脚本：script
 + 存放css 文件：css
 
-## HTML规范
+#### 5. 引入库文件/插件
 
-### 1. 文档类型、语言、编码、关键字等声明
+引入JS库文件，文件名须包含库名称及版本号及是否为压缩版。比如 `jquery-1.4.1.min.js`
 
-必须设置文档类型、语言 language 和编码 charset格式
+引入插件，文件名格式为库名称+插件名称。比如 `jQuery.bootstrap.js`
 
-+ 不声明文档类型，会进入怪异模式，浏览器按照自己的方式解析页面，不同浏览器渲染样式不同
-+ [HTML 设置 lang 属性的意义](https://ayaka.shn.hk/langtag/)
-+ 不声明编码，浏览器会根据自己默认解码格式解析文档，可能照成乱码（也有可能是编码与编码声明格式不同造成乱码）
-+ 网站作者、描述、关键字等信息有利于seo
-+ 请尽量统一写成标准的 “UTF-8”，不要写成 “utf-8” 或 “utf8” 或 “UTF8”。而 UTF8 或 utf8 的写法只是出现在某些编程系统中，如 .NET framework 的类 System.Text.Encoding 中的一个属性名就叫 UTF8
+### 标签
+
+#### 1. 标签名必须使用小写字母
+
+#### 2. 对于无需自闭合的标签，不允许自闭合
+
+常见无需自闭合标签有input、br、img、hr等。
+
+```html
+<!-- 推荐 -->
+<input type="text" name="title">
+
+<!-- 不推荐 -->
+<input type="text" name="title" />
+```
+
+#### 3. 对 HTML5 中规定允许省略的闭合标签，不允许省略闭合标签
+
+```html
+<!-- 推荐 -->
+<ul>
+    <li>first</li>
+    <li>second</li>
+</ul>
+
+<!-- 不推荐 -->
+<ul>
+    <li>first
+    <li>second
+</ul>
+```
+
+#### 4. 标签使用必须符合标签嵌套规则
+
++ ul,li/ol,li/dl,dt,dd拥有父子级关系的标签；ul、ol下都只能跟li，dl下只能跟dt.dd
++ p,dt,h标签里面不能嵌套块元素
++ a标签不能嵌套a
++ 行内元素不能嵌套块元素
+
+#### 5. HTML 标签的使用应该遵循标签的语义
+
+下面是常见标签语义
+
+p - 段落
+h1,h2,h3,h4,h5,h6 - 层级标题
+strong,em - 强调
+ins - 插入
+del - 删除
+abbr - 缩写
+code - 代码标识
+cite - 引述来源作品的标题
+q - 引用
+blockquote - 一段或长篇引用
+ul - 无序列表
+ol - 有序列表
+dl,dt,dd - 定义列表
+
+```html
+<!-- 推荐 -->
+<p>Esprima serves as an important <strong>building block</strong> for some JavaScript language tools.</p>
+
+<!-- 不推荐 -->
+<div>Esprima serves as an important <span class="strong">building block</span> for some JavaScript language tools.</div>
+```
+
+便于浏览器、搜索引擎解析。 利于爬虫标记、利于SEO
+
+#### 6. 在 CSS 可以实现相同需求的情况下不得使用表格进行布局
+
+在兼容性允许的情况下应尽量保持语义正确性。对网格对齐和拉伸性有严格要求的场景允许例外，如多列复杂表单。
+
+#### 7. 标签的使用应尽量简洁，减少不必要的标签
+
+```html
+<!-- 推荐 -->
+<img class="avatar" src="image.png">
+
+<!-- 不推荐 -->
+<span class="avatar">
+    <img src="image.png">
+</span>
+```
+
+#### 8. 使用a标签作为JS事件处理时，统一使用 href="javascript:;" 伪协议
+
+更多[html中的a标签详解](https://juejin.im/post/5de781ea518825126204e6b5)
+
+### 属性
+
+#### 1. 属性名必须使用小写字母
+
+```html
+<!-- 推荐 -->
+<table cellspacing="0">...</table>
+
+<!-- 不推荐 -->
+<table cellSpacing="0">...</table>
+```
+
+#### 2. 属性值必须用双引号包围
+
+不允许使用单引号，不允许不使用引号。
+
+```html
+<!-- 推荐 -->
+<script src="esl.js"></script>
+
+<!-- 不推荐 -->
+<script src='esl.js'></script>
+<script src=esl.js></script>
+```
+
+#### 3. 布尔类型的属性，建议不添加属性值
+
+```html
+<input type="text" disabled>
+<input type="checkbox" value="1" checked>
+```
+
+#### 4. 自定义属性建议以 xxx- 为前缀，推荐使用 data-
+
+使用前缀有助于区分自定义属性和标准定义的属性
+
+```html
+<ol data-ui-type="Select"></ol>
+```
+
+#### 5. 属性顺序
+
+属性应该按照特定的顺序出现以保证易读性；
+
++ class
++ id
++ name
++ data-*
++ src, for, type, href, value , max-length, max, min, pattern
++ placeholder, title, alt
++ aria-*, role
++ required, readonly, disabled
+
+class是为高可复用组件设计的，所以应处在第一位；
+
+id更加具体且应该尽量少使用，所以将它放在第二位。
+
+```html
+<a class="..." id="..." data-modal="toggle" href="#">Example link</a>
+
+<input class="form-control" type="text">
+
+<img src="..." alt="...">
+```
+
+## 通用
+
+### DOCTYPE
+
+#### 1. 使用 HTML5 的 doctype 来启用标准模式，建议使用大写的 DOCTYPE
+
+```html
+<!DOCTYPE html>
+```
+
+不声明文档类型，会进入怪异模式，浏览器按照自己的方式解析页面，不同浏览器渲染样式不同
+
+#### 2. 启用 IE Edge 模式
+
+```html
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+```
+
+#### 3. 在 html 标签上设置正确的 lang 属性
+
+有助于提高页面的可访问性，如：让语音合成工具确定其所应该采用的发音，令翻译工具确定其翻译语言等
+
+```html
+<html lang="zh-CN">
+```
+
+### 编码
+
+#### 页面必须使用精简形式，明确指定字符编码。指定字符编码的 meta 必须是 head 的第一个直接子元素
+
+`<meta charset="UTF-8">`
+
+不声明编码，浏览器会根据自己默认解码格式解析文档，可能照成乱码（也有可能是编码与编码声明格式不同造成乱码）
+
+请尽量统一写成标准的 “UTF-8”，不要写成 “utf-8” 或 “utf8” 或 “UTF8”。而 UTF8 或 utf8 的写法只是出现在某些编程系统中，如 .NET framework 的类 System.Text.Encoding 中的一个属性名就叫 UTF8
+
+#### HTML 文件使用无 BOM 的 UTF-8 编码
+
+UTF-8 编码具有更广泛的适应性。BOM 在使用程序或工具处理文件时可能造成不必要的干扰。
+
+### CSS和JavaScript引入
+
+#### 1. 不需要为 CSS、JS 指定类型属性，HTML5 中默认已包含
+
+```html
+<!-- 推荐 -->
+<link rel="stylesheet" href="" >
+<script src=""></script>
+
+<!-- 不推荐 -->
+<link rel="stylesheet" type="text/css" href="" >
+<script type="text/javascript" src="" ></script>
+```
+
+#### 2. 展现定义放置于外部 CSS 中，行为定义放置于外部 JavaScript 中
+
+结构-样式-行为的代码分离，对于提高代码的可阅读性和维护性都有好处。
+
+#### 3. 在 head 中引入页面需要的所有 CSS 资源
+
+在页面渲染的过程中，新的CSS可能导致元素的样式重新计算和绘制，页面闪烁。而且css阻塞js执行。
+
+#### 4. JavaScript 应当放在页面末尾，或采用异步加载
+
+将 script 放在页面中间将阻断页面的渲染。出于性能方面的考虑，如非必要，请遵守此条建议。
+
+#### 5. 移动环境或只针对现代浏览器设计的 Web 应用，如果引用外部资源的 URL 协议部分与页面相同，建议省略协议前缀
+
+使用 protocol-relative URL 引入 CSS，在 IE7/8 下，会发两次请求。是否使用 protocol-relative URL 应充分考虑页面针对的环境。
+
+`<script src="//huoyuhao.net/jquery-1.10.2.min.js"></script>`
+
+链接不声明协议名称（http/https），这样会默认使用当前页面的协议，以后升级协议减少不必要的麻烦
+
+#### 6. 书写链接地址时，必须避免重定向，在URL地址后面加上“/”
+
+书写链接地址时，必须避免重定向，即须在URL地址后面加上“/”，例如：href="http://myVue.com/"
+
+#### 7. 避免空的src和href
+
+当link标签的href属性为空、script标签的src属性为空的时候，浏览器渲染的时候会把当前页面的URL作为它们的属性值，从而把页面的内容加载进来作为它们的值，不同浏览器表现如下：
+
++ IE 向页面所在的目录发送请求；
++ Safari、Chrome、Firefox 向页面本身发送请求；
++ Opera 不执行任何操作。
+
+空 src 产生请求的后果：
+
++ 给服务器造成意外的流量负担，尤其时日 PV 较大时；
++ 浪费服务器计算资源；
++ 可能产生报错。
+
+空的 href 属性也存在类似问题。用户点击空链接时，浏览器也会向服务器发送 HTTP 请求，可以通过 JavaScript 阻止空链接的默认的行为
+
+## Head
 
 ```html
 <!DOCTYPE html>
@@ -131,75 +323,71 @@ d, a,b两条, 适用于在2中已建好框架的页面, 如：要在2中已建�
 </html>
 ```
 
-### 2. CSS放首部、Js放尾部
+### SEO
 
-非特殊情况下CSS文件放在body部分 meta 标签后。非特殊情况下大部分JS文件放在 body 标签尾部（如果需要界面未加载前执行的代码可以放在head标签后）避免行内JS和CSS代码。
+#### 页面必须包含 title 标签声明标题
 
-因为css阻塞js执行，js阻塞dom解析
+#### title 必须作为 head 的直接子元素，并紧随 charset 声明之后
 
-### 3. HTML编码规则
+### DNS预解析
 
-所有编码需要遵循html（XML）标准
-
-+ 且所有标签必须闭合，包括br()，hr()等
-+ 属性值用双引号
-+ 书写时利用IDE实现层次分明的缩进（默认缩进4空格）
-+ 所有具有开始标签和结束标签的元素都要写上起止标签，某些允许省略开始标签或和束标签的元素亦都要写上。
-+ 空元素标签都不加 “/” 字符
+DNS 预读取是一项使浏览器主动去执行域名解析的功能，其范围包括文档的所有链接，无论是图片的，CSS 的，还是 JavaScript 等其他用户能够点击的 URL，减少用户点击链接时的延迟
 
 ```html
-<div>
-    <h1>我是h1标题</h1>
-    <p>我是一段文字，我有始有终，浏览器能正确解析</p>
-</div>
-<br>
+<!-- 打开和关闭DNS预解析 -->
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<!-- 手动添加接卸 -->
+<link rel="dns-prefetch" href="http://www.google.com">
 ```
 
-### 4. 引入库文件/插件
+更多内容了解[X-DNS-Prefetch-Control](https://developer.mozilla.org/zh-CN/docs/Controlling_DNS_prefetching)
 
-引入JS库文件，文件名须包含库名称及版本号及是否为压缩版。比如 `jquery-1.4.1.min.js`
+### favicon
 
-引入插件，文件名格式为库名称+插件名称。比如 `jQuery.bootstrap.js`
+#### 保证 favicon 可访问
 
-### 5. 书写页面过程中，请考虑向后扩展性
+在未指定 favicon 时，大多数浏览器会请求 Web Server 根目录下的 favicon.ico 。为了保证favicon可访问，避免404，必须遵循以下两种方法之一：
 
-class&id参见css书写规范
+在 Web Server 根目录放置 favicon.ico 文件。
+使用 link 指定 favicon
 
-### 6. a标签
+`<link rel="shortcut icon" href="/favicon.ico">`
 
-+ 使用a标签作为JS事件处理时，统一使用 href="javascript:;" 伪协议
+### viewport
 
-更多[html中的a标签详解](https://juejin.im/post/5de781ea518825126204e6b5)
+若页面欲对移动设备友好，需指定页面的 viewport。
 
-### 7. 语义化html
+viewport meta tag可以设置可视区域的宽度和初始缩放大小，避免在移动设备上出现页面展示不正常。
 
-如标题根据重要性用h*(同一页面只能有一个h1)，段落标记用p，列表用ul，内联元素中不可嵌套块级元素，还有`header/footer/section/nav/article`等标签。
+比如，在页面宽度小于 980px 时，若需 iOS 设备友好，应当设置 viewport 的 width 值来适应你的页面宽度。同时因为不同移动设备分辨率不同，在设置时，应当使用 device-width 和 device-height 变量。
 
-便于浏览器、搜索引擎解析。 利于爬虫标记、利于SEO。
+另外，为了使 viewport 正常工作，在页面内容样式布局设计上也要做相应调整，如避免绝对定位等。关于 viewport 的更多介绍，可以参见 [Safari Web Content Guide](https://developer.apple.com/library/mac/documentation/AppleApplications/Reference/SafariWebContent/UsingtheViewport/UsingtheViewport.html#//apple_ref/doc/uid/TP40006509-SW26)的介绍
 
-### 8. 标签的使用尽量简洁，减少不必要的标签
+### lang
 
-尽可能少地渲染元素，因为这将有助于您使用css设置样式
+[HTML 设置 lang 属性的意义](https://ayaka.shn.hk/langtag/)
 
-```html
-<!-- Not well -->
-<p class="title">我是标题</p>
-<span class="avatar">
-    <img src="...">
-</span>
+更多关于 lang 属性的知识可以从 [此规范](http://www.w3.org/html/wg/drafts/html/master/semantics.html#the-html-element) 中了解。
 
-<!-- Better -->
-<h3>我是标题</h3>
-<img class="avatar" src="...">
-```
+Sitepoint 站点上 给出了一份[语言代码表](https://www.sitepoint.com/iso-2-letter-language-codes/)
 
-### 9. 链接地址
+## 图片
 
-+ 书写链接地址时，必须避免重定向，例如：href="http://myVue.com/"，即须在URL地址后面加上“/”
-+ 链接最好不声明协议名称（http/https），这样会默认使用当前页面的协议，以后升级协议减少不必要的麻烦
+### 1. 禁止 img 的 src 取值为空。延迟加载的图片也要增加默认的 src
 
-### 10. 
-### 11. img标签与CSS背景
+src 取值为空，会导致部分浏览器重新加载一次当前页面，参考：[更多](https://developer.yahoo.com/performance/rules.html#emptysrc)
+
+### 2. 避免为 img 添加不必要的 title 属性
+
+多余的 title 影响看图体验，并且增加了页面尺寸。
+
+### 3. 为重要图片添加 alt 属性
+
+可以提高图片加载失败时的用户体验。
+
+### 4. 添加 width 和 height 属性，以避免页面抖动
+
+### 5. img标签与CSS背景
 
 + 根据语义化选择实现方式
 + 如下场景使用img标签比较合适：
@@ -216,18 +404,49 @@ class&id参见css书写规范
 
 2、图片作为背景，在图片没有加载或者加载失败时，不会有个图片的占位标记，不会出现红叉。
 
-### 12. 避免空的src和href
+产品 logo、用户头像、用户产生的图片等有潜在下载需求的图片，以 img 形式实现，能方便用户下载。
+无下载需求的图片，比如：icon、背景、代码使用的图片等，尽可能采用 css 背景图实现。
 
-当link标签的href属性为空、script标签的src属性为空的时候，浏览器渲染的时候会把当前页面的URL作为它们的属性值，从而把页面的内容加载进来作为它们的值，不同浏览器表现如下：
+## 多媒体
 
-+ IE 向页面所在的目录发送请求；
-+ Safari、Chrome、Firefox 向页面本身发送请求；
-+ Opera 不执行任何操作。
+### 1. 当在现代浏览器中使用 audio 以及 video 标签来播放音频、视频时，应当注意格式
 
-空 src 产生请求的后果：
+音频应尽可能覆盖到如下格式：
 
-+ 给服务器造成意外的流量负担，尤其时日 PV 较大时；
-+ 浪费服务器计算资源；
-+ 可能产生报错。
+MP3/WAV/Ogg
 
-空的 href 属性也存在类似问题。用户点击空链接时，浏览器也会向服务器发送 HTTP 请求，可以通过 JavaScript 阻止空链接的默认的行为
+视频应尽可能覆盖到如下格式：
+
+MP4/WebM/Ogg
+
+### 2. 在支持 HTML5 的浏览器中优先使用 audio 和 video 标签来定义音视频元素
+
+### 3. 使用退化到插件的方式来对多浏览器进行支持
+
+```html
+<audio controls>
+    <source src="audio.mp3" type="audio/mpeg">
+    <source src="audio.ogg" type="audio/ogg">
+    <object width="100" height="50" data="audio.mp3">
+        <embed width="100" height="50" src="audio.swf">
+    </object>
+</audio>
+
+<video width="100" height="50" controls>
+    <source src="video.mp4" type="video/mp4">
+    <source src="video.ogg" type="video/ogg">
+    <object width="100" height="50" data="video.mp4">
+        <embed width="100" height="50" src="video.swf">
+    </object>
+</video>
+```
+
+### 4. 只在必要的时候开启音视频的自动播放
+
+### 5. 在 object 标签内部提供指示浏览器不支持该标签的说明
+
+`<object width="100" height="50" data="something.swf">DO NOT SUPPORT THIS TAG</object>`
+
+## 参考
+
+[HTML编码规范](https://github.com/fex-team/styleguide/blob/master/html.md)
