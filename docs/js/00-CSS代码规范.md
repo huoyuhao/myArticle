@@ -1,3 +1,11 @@
+---
+meta:
+  - name: description
+    content: 前端CSS代码规范
+  - name: keywords
+    content: 前端规范,前端CSS代码规范,CSS,前端,规范,命名规范,CSS规范
+---
+
 # CSS代码规范
 
 ## 加载方式
@@ -55,6 +63,65 @@ div{ margin : 0; padding: 0; border: 1px red solid; }
 更多内容查看[内联和外链脚本的性能实验](https://harttle.land/2017/05/05/external-scripts-vs-inline.html)
 
 ## 代码风格
+
+### 命名
+
+#### 1. class与id命名
+
++ id命名使用小驼峰命名，如：`userID`
++ class命名使用由 小写英文和 - 来组合命名, 如：`banner-container`
++ 避免使用中文拼音, 尽量使用简易的单词组合， 命名要语义化, 简明化.
+
+class命名使用字符 `-` 增加易读性，而且和css属性名称保持了一致，也可以使用下划线`_`作为连接符（双击更加容易全选中当前class）。
+
+更好的是BEM 命名法，但是过于复杂，更多查看 [CSSM 命名法](https://segmentfault.com/a/1190000007956424)
+
+#### 2. 头部缩写推荐
+
++ 重置和默认：reset + base
++ 布局(g-) 例如头部，尾部，主体，侧栏等
++ 模块(m-) 较大整体，如登录注册，搜索等
++ 元件(u-) 不可再分个体，例如按钮，input框等
++ 功能(f-) 使用频率较高样式，例如清除浮动
++ 皮肤(s-) 例如文字色，背景色，边框色等
++ 状态(z-) 例如hover，选中等
++ j- 专门用于js获取节点，勿占用
+
+#### 3. 常用头部名称
+
+##### 类class的命名规范示例
+
+头：header
+内容：content/container
+尾：footer
+导航：nav
+侧栏：sidebar
+栏目：column
+页面外围控制整体布局宽度：wrapper
+左右中：left right center
+标志：logo
+广告：banner
+页面主体：main
+热点：hot
+新闻：news
+下载：download
+子导航：sub-nav
+菜单：menu
+子菜单：sub-menu
+搜索：search
+友情链接：friend-link
+页脚：footer
+版权：copyright
+滚动：scroll
+标签页：tab
+提示信息：msg
+小技巧：tips
+指南：guild
+服务：service
+注册：register
+状态：status
+投票：vote
+合作伙伴：partner
 
 ### 编码格式
 
@@ -534,7 +601,9 @@ a:hover { text-decoration: underline; }
     and (-webkit-min-device-pixel-ratio: 3) {}
 ```
 
-## CSS3浏览器私有前缀写法
+## 其他
+
+### CSS3浏览器私有前缀写法
 
 CSS3 浏览器私有前缀在前，标准前缀在后
 
@@ -548,7 +617,7 @@ CSS3 浏览器私有前缀在前，标准前缀在后
 }
 ```
 
-## 伪元素
+### 伪元素
 
 伪元素是伪的，伪的意思就是说，你无法用js获取到这个伪元素，或者增、删、改一个伪元素，所以伪元素的优点就体现在这里了——你可以用伪元素制造视觉上的效果，但是不会增加JS查DOM的负担，它对JS是透明的。所以即使你给页面添加了很多伪元素，也不会影响查DOM的效率。同时，它不是一个实际的html标签，可以加快浏览器加载html文件，对SEO也是有帮助的。
 
@@ -557,9 +626,21 @@ CSS3 浏览器私有前缀在前，标准前缀在后
 + 没有语义化的标签可以通过伪元素实现
 + 一些符号、icon、清楚浮动等
 
-## 其他原则
+### 其他原则
 
 + 利用html自身属性及样式继承原理减少代码量
 + 通过webpack打包压缩css文件代码
 + 书写代码前, 考虑并提高样式重复使用率
 + 在保存代码解耦的前提下，尽量合并重复的样式
+
+## 注意事项
+
+本文暂未对【动画】、【适配】两个内容做规范要求，需要后续补充
+
+## 参考
+
+[前端代码规范](https://guide.aotu.io/docs/css/code.html)
+
+[css编码规范](http://itmyhome.com/css/shu_xing_qian_zhui.html)
+
+[CSS性能优化的8个技巧](https://juejin.im/post/5b6133a351882519d346853f#heading-6)
