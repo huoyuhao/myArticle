@@ -32,6 +32,7 @@ app.get("/crossDomain2", function(req, res) {
   res.end(JSON.stringify(reqData))
 })
 
+// 静态资源请求
 app.use('/static', express.static('public'))
 
 
