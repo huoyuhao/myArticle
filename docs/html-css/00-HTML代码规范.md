@@ -1,9 +1,9 @@
 ---
 meta:
-  - name: description
-    content: 前端HTML代码规范
-  - name: keywords
-    content: 前端规范,前端HTML代码规范,HTML,前端,规范,命名规范,HTML规范
+- name: description
+  content: 前端HTML代码规范
+- name: keywords
+  content: 前端规范,前端HTML代码规范,HTML,前端,规范,命名规范,HTML规范
 ---
 
 # HTML代码规范
@@ -28,7 +28,7 @@ meta:
 
 #### 2. 标签自定义属性命名
 
-标签的自定义属性以data-开头，后面跟小写单词，多单词使用下划线连接如：`<a data-推荐s_num='18' href="javascript:;" ></a>`
+标签的自定义属性以data-开头，后面跟小写单词，多单词使用 - 连接如：`<a data-product-num='18' href="javascript:;"></a>`
 
 #### 3. name 与 id
 
@@ -36,21 +36,21 @@ meta:
 
 **解释：**IE 浏览器会混淆元素的 id 和 name 属性， document.getElementById 可能获得不期望的元素。所以在对元素的 id 与 name 属性的命名需要非常小心
 
-一个比较好的实践是，为 id 和 name 使用不同的命名法。
+一个比较好的实践是，为 id 和 name 使用不同的命名法
 
 ```html
 <input name="foo">
 <div id="foo"></div>
 <script>
 // IE6 将显示 INPUT
-alert(document.getElementById('foo').tagName);
+alert(document.getElementById('foo').tagName)
 </script>
 ```
 
 #### 4. 文件存放位置命名
 
-+ 图片文件：images
-+ 存放javascript 脚本：script
++ 图片文件：img
++ 存放javascript js
 + 存放css 文件：css
 
 #### 5. 引入库文件/插件
@@ -65,7 +65,7 @@ alert(document.getElementById('foo').tagName);
 
 #### 2. 对于无需自闭合的标签，不允许自闭合
 
-常见无需自闭合标签有input、br、img、hr等。
+常见无需自闭合标签有input、br、img、hr等
 
 ```html
 <!-- 推荐 -->
@@ -80,14 +80,14 @@ alert(document.getElementById('foo').tagName);
 ```html
 <!-- 推荐 -->
 <ul>
-    <li>first</li>
-    <li>second</li>
+  <li>first</li>
+  <li>second</li>
 </ul>
 
 <!-- 不推荐 -->
 <ul>
-    <li>first
-    <li>second
+  <li>first
+  <li>second
 </ul>
 ```
 
@@ -138,7 +138,7 @@ dl,dt,dd - 定义列表
 
 <!-- 不推荐 -->
 <span class="avatar">
-    <img src="image.png">
+  <img src="image.png">
 </span>
 ```
 
@@ -160,7 +160,7 @@ dl,dt,dd - 定义列表
 
 #### 2. 属性值必须用双引号包围
 
-不允许使用单引号，不允许不使用引号。
+不允许使用单引号，不允许不使用引号
 
 ```html
 <!-- 推荐 -->
@@ -201,7 +201,7 @@ dl,dt,dd - 定义列表
 
 class是为高可复用组件设计的，所以应处在第一位；
 
-id更加具体且应该尽量少使用，所以将它放在第二位。
+id更加具体且应该尽量少使用，所以将它放在第二位
 
 ```html
 <a class="..." id="..." data-modal="toggle" href="#">Example link</a>
@@ -249,7 +249,7 @@ id更加具体且应该尽量少使用，所以将它放在第二位。
 
 #### HTML 文件使用无 BOM 的 UTF-8 编码
 
-UTF-8 编码具有更广泛的适应性。BOM 在使用程序或工具处理文件时可能造成不必要的干扰。
+UTF-8 编码具有更广泛的适应性。BOM 在使用程序或工具处理文件时可能造成不必要的干扰
 
 ### CSS和JavaScript引入
 
@@ -267,15 +267,15 @@ UTF-8 编码具有更广泛的适应性。BOM 在使用程序或工具处理文�
 
 #### 2. 展现定义放置于外部 CSS 中，行为定义放置于外部 JavaScript 中
 
-结构-样式-行为的代码分离，对于提高代码的可阅读性和维护性都有好处。
+结构-样式-行为的代码分离，对于提高代码的可阅读性和维护性都有好处
 
 #### 3. 在 head 中引入页面需要的所有 CSS 资源
 
-在页面渲染的过程中，新的CSS可能导致元素的样式重新计算和绘制，页面闪烁。而且css阻塞js执行。
+在页面渲染的过程中，新的CSS可能导致元素的样式重新计算和绘制，页面闪烁。而且css阻塞js执行
 
 #### 4. JavaScript 应当放在页面末尾，或采用异步加载
 
-将 script 放在页面中间将阻断页面的渲染。出于性能方面的考虑，如非必要，请遵守此条建议。
+将 script 放在页面中间将阻断页面的渲染。出于性能方面的考虑，如非必要，请遵守此条建议
 
 #### 5. 移动环境或只针对现代浏览器设计的 Web 应用，如果引用外部资源的 URL 协议部分与页面相同，建议省略协议前缀
 
@@ -287,7 +287,7 @@ UTF-8 编码具有更广泛的适应性。BOM 在使用程序或工具处理文�
 
 #### 6. 书写链接地址时，必须避免重定向，在URL地址后面加上“/”
 
-书写链接地址时，必须避免重定向，即须在URL地址后面加上“/”，例如：href="http://myVue.com/"
+书写链接地址时，必须避免重定向，即须在URL地址后面加上“/”，例如：href="http://huoyuhao.net/"
 
 #### 7. 避免空的src和href
 
@@ -311,12 +311,12 @@ UTF-8 编码具有更广泛的适应性。BOM 在使用程序或工具处理文�
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <title>title</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <!-- Edge：始终以最新的文档模式来渲染页面。忽略文档类型声明。对于IE8，始终以IE8标准模式渲染页面。IE9亦如此。 -->
-    <meta name="keywords" content=""/>
-    <meta name="description" content=""/>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <!-- Edge：始终以最新的文档模式来渲染页面。忽略文档类型声明。对于IE8，始终以IE8标准模式渲染页面。IE9亦如此。 -->
+  <meta name="keywords" content=""/>
+  <meta name="description" content=""/>
 </head>
 <body>
 </body>
@@ -379,7 +379,7 @@ src 取值为空，会导致部分浏览器重新加载一次当前页面，参�
 
 ### 2. 避免为 img 添加不必要的 title 属性
 
-多余的 title 影响看图体验，并且增加了页面尺寸。
+多余的 title 影响看图体验，并且增加了页面尺寸
 
 ### 3. 为重要图片添加 alt 属性
 
@@ -389,23 +389,28 @@ src 取值为空，会导致部分浏览器重新加载一次当前页面，参�
 
 ### 5. img标签与CSS背景
 
-+ 根据语义化选择实现方式
-+ 如下场景使用img标签比较合适：
-  + 1、使用IMG(alt文本)图像有一个重要的语义时，比如一个警告图标。这将确保图像的意义可以很好的和user-agents沟通，包括屏幕阅读器
-  + 2、如果你依赖于浏览器缩放图像比例并且可以呈现不错的效果时使用IMG（缩放图片请先将图片脱离正常文档流）
-  + 3、如果配合 z-index 伸展背景图像来填补它的整个窗口时使用IMG
-  + 4、使用img代替有背景图像可以显著提高性能的动画背景
-+ 如下场景使用background-image属性比较合适：
-  + 1、如果图像不是内容的一部分时使用 background-image
-  + 2、当图像代替文本使用时使用 background-image（避免出现无语义化标签）
-  + 3、如果需要缩短下载时间通过CSS sprites 时使用 background-image
+根据语义化选择实现方式
 
-1、css中的图片以背景图形式存在，写在html中的图片以标签形式存在。而在网页加载过程中，以css背景存在的图片会等到html结构加载完成才开始加载，而html中的img标签是网页结构（内容）的一部分会在加载结构的过程中加载。
+如下场景使用img标签比较合适：
 
-2、图片作为背景，在图片没有加载或者加载失败时，不会有个图片的占位标记，不会出现红叉。
++ 使用IMG(alt文本)图像有一个重要的语义时，比如一个警告图标。这将确保图像的意义可以很好的和user-agents沟通，包括屏幕阅读器
++ 如果你依赖于浏览器缩放图像比例并且可以呈现不错的效果时使用IMG（缩放图片请先将图片脱离正常文档流）
++ 如果配合 z-index 伸展背景图像来填补它的整个窗口时使用IMG
++ 使用img代替有背景图像可以显著提高性能的动画背景
+
+如下场景使用background-image属性比较合适：
+
++ 如果图像不是内容的一部分时使用 background-image
++ 当图像代替文本使用时使用 background-image（避免出现无语义化标签）
++ 如果需要缩短下载时间通过CSS sprites 时使用 background-image
+
+css中的图片以背景图形式存在，写在html中的图片以标签形式存在。而在网页加载过程中，以css背景存在的图片会等到html结构加载完成才开始加载，而html中的img标签是网页结构（内容）的一部分会在加载结构的过程中加载。
+
+图片作为背景，在图片没有加载或者加载失败时，不会有个图片的占位标记，不会出现红叉。
 
 产品 logo、用户头像、用户产生的图片等有潜在下载需求的图片，以 img 形式实现，能方便用户下载。
-无下载需求的图片，比如：icon、背景、代码使用的图片等，尽可能采用 css 背景图实现。
+
+无下载需求的图片，比如：icon、背景、代码使用的图片等，尽可能采用 css 背景图实现
 
 ## 多媒体
 
@@ -425,19 +430,19 @@ MP4/WebM/Ogg
 
 ```html
 <audio controls>
-    <source src="audio.mp3" type="audio/mpeg">
-    <source src="audio.ogg" type="audio/ogg">
-    <object width="100" height="50" data="audio.mp3">
-        <embed width="100" height="50" src="audio.swf">
-    </object>
+  <source src="audio.mp3" type="audio/mpeg">
+  <source src="audio.ogg" type="audio/ogg">
+  <object width="100" height="50" data="audio.mp3">
+      <embed width="100" height="50" src="audio.swf">
+  </object>
 </audio>
 
 <video width="100" height="50" controls>
-    <source src="video.mp4" type="video/mp4">
-    <source src="video.ogg" type="video/ogg">
-    <object width="100" height="50" data="video.mp4">
-        <embed width="100" height="50" src="video.swf">
-    </object>
+  <source src="video.mp4" type="video/mp4">
+  <source src="video.ogg" type="video/ogg">
+  <object width="100" height="50" data="video.mp4">
+      <embed width="100" height="50" src="video.swf">
+  </object>
 </video>
 ```
 
