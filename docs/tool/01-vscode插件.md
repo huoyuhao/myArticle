@@ -3,9 +3,9 @@ meta:
   - name: description
     content: 前端vscode使用
   - name: keywords
-    content: 前端vscode使用,JavaScript,前端,vscode,
+    content: 前端vscode插件,JavaScript,前端,vscode插件,插件,vscode
 ---
-# 前端vscode使用
+# 前端vscode插件
 
 ## 插件推荐
 
