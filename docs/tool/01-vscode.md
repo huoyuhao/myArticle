@@ -334,6 +334,12 @@ styled-jsx 高亮支持
     "editor.lineHighlightBackground": "#1a2c1c", // 光标所在行的背景色
     "editor.lineHighlightBorder": "#7154978a" // 光标所在行的边框色
   },
+  "files.associations": { // 文件读取方式修改 代码自动补齐
+    "*.html":"html",
+    "*.tpl": "html",
+    "*.nj":"html",
+    "*.vue":"html"
+  },
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
   },
