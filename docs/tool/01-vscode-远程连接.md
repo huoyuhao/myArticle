@@ -92,5 +92,11 @@ Host liam
     HostName X.X.X.X
     User root
     Port XX
-    IdentityFile //Users/XX/.ssh/id_rsa
+    IdentityFile //Users/liam/.ssh/id_rsa
+
+Host yuhoo
+    HostName X.X.X.X
+    User root
+    Port 22
+    IdentityFile //Users/liam/Documents/aliyun/yuhoo.pem
 ```
