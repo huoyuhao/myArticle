@@ -56,3 +56,41 @@ systemctl restrt sshd
 + 安装成功后更改php可执行文件没有在$PATH中
 + 运行`ln -s /usr/local/php/bin/php /usr/bin/php`
 + 运行`php -v`查看是否成功
+
+### 4. vscode免密码登录
+
+1）生成密钥文件
+
+2）上传本地密钥到服务器
+
+```shell
+cd ~/.ssh
+cat id_rsa.pub >> authorized_keys
+```
+
+3） 配置打开密钥登录功能
+
+```shell
+# 打开SSH配置文件
+vim /etc/ssh/sshd_config
+
+# 查看确认下面两项配置 默认不需要修改配置
+RSAAuthentication yes
+PubkeyAuthentication yes
+
+# 当你完成全部设置，并以密钥方式登录成功后，再禁用密码登录
+PasswordAuthentication no
+
+# 重启SSH
+systemctl restart sshd
+```
+
+4）本机vscode配置
+
+```config
+Host liam
+    HostName X.X.X.X
+    User root
+    Port XX
+    IdentityFile //Users/XX/.ssh/id_rsa
+```

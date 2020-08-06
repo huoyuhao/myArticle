@@ -59,4 +59,5 @@ netstat -tpln         // 查看项目端口
 kill -9 2238 // 杀死进程PID为2238的进程
 sudo passwd root      // 设置root密码
 chkconfig --list      //查看开机启动服务列表
+telnet 127.0.0.1 80 // 测试ip端口连通性
 ```
