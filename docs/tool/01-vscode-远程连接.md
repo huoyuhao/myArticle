@@ -3,16 +3,6 @@
 
 ## 配置云服务器
 
-开启HTTP代理
-
-```linux
-cat ~/.bashrc
-export http_proxy=devnet-proxy.oa.com:8080
-export https_proxy=devnet-proxy.oa.com:8080
-export ftp_proxy=devnet-proxy.oa.com:8080
-export no_proxy="127.0.0.1,tlinux-mirror.tencent-cloud.com,tlinux-mirrorlist.tencent-cloud.com,localhost,mirrors-tlinux.tencentyun.com,.oa.com,.local"
-```
-
 设置tlinux云开发机支持ssh-public-key登录
 
 ```linux
@@ -93,4 +83,10 @@ Host liam
     User root
     Port XX
     IdentityFile //Users/XX/.ssh/id_rsa
+
+Host yuhoo
+  HostName X.X.X.X
+  User root
+  Port 22
+  IdentityFile /d/XX.pem
 ```
