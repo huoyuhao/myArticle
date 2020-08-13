@@ -33,6 +33,35 @@ Docker 主要包含三个基本概念，分别是镜像、容器和仓库，理�
 
 + 仓库：镜像构建完成后，可以很容易的在当前宿主机上运行，但是，如果需要在其它服务器上使用这个镜像，我们就需要一个集中的存储、分发镜像的服务，Docker Registry 就是这样的服务。一个 Docker Registry 中可以包含多个仓库；每个仓库可以包含多个标签；每个标签对应一个镜像，其中标签可以理解为镜像的版本号。
 
+## Docker安装
 
+[mac](https://docs.docker.com/docker-for-mac/install/)
+
+[windows](https://docs.docker.com/docker-for-windows/install/)
+
+[centos](https://docs.docker.com/engine/install/centos/)
+
+安装完成后，运行下面的命令，验证是否安装成功。`docker version`
+
+## Docker命令
+
+```conf
+docker info # 查看当前 Docker 运行环境；
+docker images # 查看本地镜像列表；
+docker search # 搜索仓库中的镜像；
+docker history # 查看镜像历史Layer层级信息;
+docker stats # 查看容器资源占用状态；
+docker top # 查看容器内运行的进程；
+docker logs # 查看容器stdout日志，加上 -f 持续输出
+
+docker ps # 查看我们正在运行的容器
+
+# 查看所有的容器
+docker ps -a
+
+
+```
+
+## DockerFile语法
 
 
