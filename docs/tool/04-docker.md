@@ -46,22 +46,72 @@ Docker 主要包含三个基本概念，分别是镜像、容器和仓库，理�
 ## Docker命令
 
 ```conf
-docker info # 查看当前 Docker 运行环境；
-docker images # 查看本地镜像列表；
-docker search # 搜索仓库中的镜像；
-docker history # 查看镜像历史Layer层级信息;
-docker stats # 查看容器资源占用状态；
-docker top # 查看容器内运行的进程；
+docker info # 查看当前 Docker 运行环境
+docker search # 搜索仓库中的镜像
+docker history # 查看镜像历史Layer层级信息
+docker stats # 查看容器资源占用状态
 docker logs # 查看容器stdout日志，加上 -f 持续输出
+docker cp # 在容器和本地文件系统中拷贝文件
+
+docker images # 查看本地镜像列表
+docker rmi 镜像id # 删除镜像，-f表示强制
 
 docker ps # 查看我们正在运行的容器
+docker ps -a # 查看所有的容器
+docker rm -f 容器id # 删除容器，-f表示强制
+docker exec # 对容器执行命令，比如最常用的 docker exec -ti 容器id bash 进入容器终端 exit退出
+docker start/restart/stop/pause/unpause 容器id # 对容器进行启动、重启、停止、暂停和取消暂停操作
 
-# 查看所有的容器
-docker ps -a
+docker login/logout # 登录/登出
+docker pull # 从仓库拉取镜像
+docker push # 推送镜像到仓库
 
 
 ```
 
 ## DockerFile语法
 
++ FROM 指令用于指定要构建的镜像的基础镜像。它通常是 Dockerfile 中的第一条指令。
 
++ RUN 指令用于在镜像中执行命令，这会创建新的镜像层。每个 RUN 指令创建一个新的镜像层。
+
++ COPY 指令用于将文件作为一个新的层添加到镜像中。通常使用 COPY 指令将应用代码赋值到镜像中。
+
++ EXPOSE 指令用于记录应用所使用的网络端口。
+
++ ENTRYPOINT 指令用于指定镜像以容器方式启动后默认运行的程序。
+
+其他的 Dockerfile 指令还有 LABEL、ENV、ONBUILD、HEALTHCHECK、CMD 等
+
+```conf
+FROM node:8.4
+COPY . /app
+WORKDIR /app
+RUN npm install
+EXPOSE 3000
+```
+
++ FROM node:8.4：该 image 文件继承官方的 node image，冒号表示标签，这里标签是8.4，即8.4版本的 node。
++ COPY . /app：将当前目录下的所有文件（除了.dockerignore排除的路径），都拷贝进入 image 文件的/app目录。
++ WORKDIR /app：指定接下来的工作路径为/app。
++ RUN npm install：在/app目录下，运行npm install命令安装依赖。注意，安装后所有的依赖，都将打包进入 image 文件。
++ EXPOSE 3000：将容器 3000 端口暴露出来， 允许外部连接这个端口。
+
+```conf
+docker build -t "liam:test" ./
+# 根据当前目录的dockerfile文件创建镜像liam，标签为test
+docker run -d -p 8081:8080 -v /data/liam:/data/www --name=sniper-test liam:test
+# docker run sniper:test 根据镜像创建容器
+# -d 后台运行容器，并返回容器ID
+# -p 8081:8080 指定端口映射，格式为：主机(宿主)端口:容器端口，即主机8081端口映射到docker容器内部端口8080
+# -v /data/liam:/data/www 主机的目录 /data/liam 映射到容器的 /data/www
+# --name=sniper-test 为容器指定一个名称
+```
+
+## 参考文章
+
+[C语言中文网 - docker教程](http://c.biancheng.net/docker/)
+
+[阮一峰的网络日志 - docker入门教程](https://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html)
+
+[菜鸟教程 - docker教程](https://www.runoob.com/docker/docker-tutorial.html)
