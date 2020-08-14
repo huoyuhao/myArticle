@@ -86,7 +86,8 @@ docker search name # 搜索仓库中的镜像 name
 FROM node:8.4
 COPY . /app
 WORKDIR /app
-RUN npm install
+RUN npm install \
+  && npm run build
 EXPOSE 3000
 ```
 
@@ -94,6 +95,7 @@ EXPOSE 3000
 + COPY . /app：将当前目录下的所有文件（除了.dockerignore排除的路径），都拷贝进入 image 文件的/app目录。
 + WORKDIR /app：指定接下来的工作路径为/app。
 + RUN npm install：在/app目录下，运行npm install命令安装依赖。注意，安装后所有的依赖，都将打包进入 image 文件。
++ Dockerfile 的指令每执行一次都会在 docker 上新建一层。所以过多无意义的层，会造成镜像膨胀过大，所以run的语句放在一起
 + EXPOSE 3000：将容器 3000 端口暴露出来， 允许外部连接这个端口。
 
 ```conf
@@ -114,3 +116,7 @@ docker run -d -p 8081:8080 -v /data/liam:/data/www --name=sniper-test liam:test
 [阮一峰的网络日志 - docker入门教程](https://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html)
 
 [菜鸟教程 - docker教程](https://www.runoob.com/docker/docker-tutorial.html)
+
+[Docker —— 从入门到实践
+
+](https://yeasy.gitbook.io/docker_practice/)
