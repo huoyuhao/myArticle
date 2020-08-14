@@ -117,6 +117,4 @@ docker run -d -p 8081:8080 -v /data/liam:/data/www --name=sniper-test liam:test
 
 [菜鸟教程 - docker教程](https://www.runoob.com/docker/docker-tutorial.html)
 
-[Docker —— 从入门到实践
-
-](https://yeasy.gitbook.io/docker_practice/)
+[Docker —— 从入门到实践](https://yeasy.gitbook.io/docker_practice/)
