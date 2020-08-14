@@ -47,7 +47,6 @@ Docker 主要包含三个基本概念，分别是镜像、容器和仓库，理�
 
 ```conf
 docker info # 查看当前 Docker 运行环境
-docker search # 搜索仓库中的镜像
 docker history # 查看镜像历史Layer层级信息
 docker stats # 查看容器资源占用状态
 docker logs # 查看容器stdout日志，加上 -f 持续输出
@@ -63,9 +62,9 @@ docker exec # 对容器执行命令，比如最常用的 docker exec -ti 容器i
 docker start/restart/stop/pause/unpause 容器id # 对容器进行启动、重启、停止、暂停和取消暂停操作
 
 docker login/logout # 登录/登出
-docker pull # 从仓库拉取镜像
-docker push # 推送镜像到仓库
-
+docker pull name # 从仓库拉取镜像 name
+docker push name:tag # 推送镜像到仓库
+docker search name # 搜索仓库中的镜像 name
 
 ```
 
