@@ -135,5 +135,3 @@ module.exports = {
 ## 参考文献
 
 [Eslint中文网](https://cn.eslint.org/docs/rules/)
-
-[]()
