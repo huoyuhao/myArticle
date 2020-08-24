@@ -13,7 +13,7 @@ meta:
 
 命令|含义
 ----|------
-`git clone git://...git` |    检出仓库
+`git clone git://...git newName`  |    检出仓库 重命名为newName
 `git init`     |            命令把这个目录变成Git可以管理的仓库
 `git init [project-name]`   |  新建一个目录，将其初始化为Git代码库
 
@@ -25,6 +25,8 @@ meta:
 `git branch -r`      |  列出所有远程分支
 `git branch [branch-name]`   |新建一个分支，但依然停留在当前分支
 `git branch -d [branch-name]`   |删除分支
+`git push origin --delete [branch-name]` | 删除远程分支
+`git push origin [local-branch-name]:[origin-branch-name]`            |        新建的本地分支push到远程服务器
 
 ### 切换分支
 
@@ -63,7 +65,6 @@ meta:
 ----|------
 `git pull`     |   拉取远程分支到本地
 `git push --set-upstream origin [branch-name]`  |        推送本地分支到远程仓库
-`git push origin  [local-branch-name]:[origin-branch-name]`            |        推送分支
 
 ### 合并分支
 
