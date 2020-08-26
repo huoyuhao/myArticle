@@ -3,9 +3,9 @@ meta:
   - name: description
     content: JavaScript中apply,call,bind方法
   - name: keywords
-    content: JavaScJavaScript中apply/call/bind方法,apply,call,bind,JavaScript,前端,学习,模拟实现
+    content: JavaScript中apply/call/bind方法,apply,call,bind,JavaScript,前端,学习,模拟实现
 ---
-# JavaScJavaScript中apply/call/bind方法
+# JavaScript中call等方法
 
 ## call
 
