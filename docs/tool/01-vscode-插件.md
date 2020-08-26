@@ -336,7 +336,7 @@ styled-jsx 高亮支持
   },
   "files.associations": { // 文件读取方式修改 代码自动补齐
     "*.html":"html",
-    "*.tpl": "html",
+    "*.tpl": "html", // 支持 tpl 等文件高亮渲染方法
     "*.nj":"html",
     "*.vue":"html"
   },

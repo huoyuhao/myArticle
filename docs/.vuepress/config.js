@@ -14,11 +14,12 @@ module.exports = {
     nav: [
       { text: '首页', link: '/' },
       { text: 'Js', link: '/js/' },
-      { text: '网络', link: '/network/' },
+      { text: 'Network', link: '/network/' },
       // { text: 'Vue', link: '/vue/' },
       // { text: 'HTML', link: '/html/' },
       { text: 'Tool', link: '/tool/' },
       { text: 'Linux', link: '/linux/' },
+      { text: 'Diet', link: '/diet/' },
       { text: 'GitHub', link: 'https://github.com/huoyuhao/myArticle' },
     ],
   },
