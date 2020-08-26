@@ -9,18 +9,18 @@ meta:
 
 + 数据类型 判断 转换
 + 执行上下文 变量提升 作用域 作用域链 闭包
-+ this call bind apply 箭头函数
++ this
++ call bind apply
++ new
 + 跨域
 + 宏任务 微任务
 
-+ 原型链 继承 new 原型
++ 数组循环
++ 原型链 继承  原型
 + let const区别
 + promise\await
 + 高阶函数 柯粒化
 + 箭头函数 特点 Es5实现 this指向
 + 防抖 / 节流
-+ 多个请求，在每个请求返回后每隔5s发送下一个请求
-+ [多个请求发送，10s后停止](https://juejin.im/post/5a32705a6fb9a045117127fa)
-+ post请求数据类型 json
 + input 文件 引用
 + 设计模式
