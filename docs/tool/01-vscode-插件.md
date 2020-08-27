@@ -64,6 +64,10 @@ HTML5、CSS3、SVG 的浏览器兼容性检查
 单词拼写检查，会自动检查单词拼写错误
 选中单词右键点击【Add Word to User Dictionary】可以把自创单词加入字典中
 
+### Codelf
+
+变量命名神器
+
 ### Color Highlight
 
 颜色值在代码中高亮显示
