@@ -7,7 +7,7 @@ module.exports = {
     ['meta', { name: 'keywords', content: '前端 web 霍雨浩 个人博客' }],
     ["meta", { name: "apple-mobile-web-app-capable", content: 'yes' }]
   ],
-  dest: './blog',    // 设置输出目录
+  dest: './blog', // 设置输出目录
   base: '/', // 设置站点根路径
   repo: 'https://github.com/huoyuhao/myArticle', // 添加 github 链接
   themeConfig: { // 导航栏配置
@@ -19,7 +19,7 @@ module.exports = {
       // { text: 'HTML', link: '/html/' },
       { text: 'Tool', link: '/tool/' },
       { text: 'Linux', link: '/linux/' },
-      { text: 'Diet', link: '/diet/' },
+      { text: '健康', link: 'https://www.health.huoyuhao.net' },
       { text: 'GitHub', link: 'https://github.com/huoyuhao/myArticle' },
     ],
   },
