@@ -82,8 +82,11 @@ meta:
 
 当我们使用git一段时间之后，想要使用一些git命令的简称，比如`st => status`，这时候我们学习如何进行个性化配置git命令。
 
-首先找到`git`的默认配置文件，文件路径`C:\Users\Administrator*\.gitconfig`
-发现代码如下
+首先找到`git`的默认配置文件
+1. window文件路径`C:\Users\Administrator*\.gitconfig`
+2. linux/mac文件路径`~/.gitconfig`
+
+修改代码如下：
 
 ```js
 [core]

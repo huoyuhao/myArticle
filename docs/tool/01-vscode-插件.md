@@ -320,7 +320,8 @@ styled-jsx 高亮支持
   "emmet.triggerExpansionOnTab": true,
   "emmet.includeLanguages": {
     "vue-html": "html",
-    "vue": "html"
+    "vue": "html",
+    "wxml": "html"
   },
   "cSpell.userWords": [
   ],
@@ -342,10 +343,15 @@ styled-jsx 高亮支持
     "*.html":"html",
     "*.tpl": "html", // 支持 tpl 等文件高亮渲染方法
     "*.nj":"html",
-    "*.vue":"html"
+    "*.vue":"html",
+    "*.cjson": "jsonc",
+    "*.wxss": "css",
+    "*.wxs": "javascript"
   },
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
+    // For Stylelint 保存格式化css
+    "source.fixAll.stylelint": true
   },
   "workbench.activityBar.visible": true, // 启用导航路径
   "search.followSymlinks": false,
@@ -355,5 +361,23 @@ styled-jsx 高亮支持
     }
   ],
   "vsicons.dontShowNewVersionMessage": true,
+  "workbench.iconTheme": "vscode-great-icons",
+  "gitlens.advanced.messages": {
+    "suppressGitVersionWarning": true
+  },
+  "sync.autoDownload": false,
+  "editor.renderIndentGuides": false,
+  "php.executablePath": "/usr/bin/php",
+  "git.ignoreLegacyWarning": true,
+  "git.confirmSync": false,
+  "window.zoomLevel": 0,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all",
+  "search.exclude": {
+    "**/logs": true
+  },
+  "explorer.compactFolders": false,
 }
 ```

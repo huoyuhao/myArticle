@@ -13,18 +13,17 @@ module.exports = {
   themeConfig: { // 导航栏配置
     nav: [
       { text: '首页', link: '/' },
+      { text: 'HTML', link: '/html/' },
       { text: 'Js', link: '/js/' },
       { text: 'Network', link: '/network/' },
-      // { text: 'Vue', link: '/vue/' },
-      // { text: 'HTML', link: '/html/' },
+      { text: 'Vue', link: '/vue/' },
       { text: 'Tool', link: '/tool/' },
       { text: 'Linux', link: '/linux/' },
-      { text: '健康', link: 'https://www.health.huoyuhao.net' },
       { text: 'GitHub', link: 'https://github.com/huoyuhao/myArticle' },
     ],
   },
   markdown: { // md文档配置
-    lineNumbers: false, // 代码块显示行号
+    lineNumbers: true, // 代码块显示行号
   },
   plugins: {
     "vuepress-plugin-auto-sidebar": {},

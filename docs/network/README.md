@@ -67,7 +67,7 @@ Chrome 浏览器关闭HSTS操作。地址栏中输入 chrome://net-internals/#hs
 
 + https为什么加载缓慢，解决方案
 
-2、网站优化
+## 网站优化
 
 + dns预解析
 + 通过正确设置响应头来缓存JavaScript文件
