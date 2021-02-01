@@ -8,6 +8,14 @@ meta:
 
 # CSS画图总结
 
+## 三角形
+
+1. 宽高设为0
+2. 四个边框设置border-width，border-style，border-color即可
+3. 如果某个三角要变为透明，设置border-color为transparent
+
+[code - 三角形](https://codepen.io/lanxingyuhoo/pen/WNobKeO)
+
 ## 扇形
 
 1. 画一个圆
