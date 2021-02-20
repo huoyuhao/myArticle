@@ -16,12 +16,15 @@ meta:
 + 原型链 继承  原型
 + let const区别
 + promise\await
++ promise.all/promise.retry
 + 高阶函数 柯粒化
 + 箭头函数 特点 Es5实现 this指向
 + 防抖 / 节流
 + input 文件 引用
 + 设计模式
 
++ export与export default差异总结 https://juejin.cn/post/6844903585805762573
++ 
 ## 优化点
 
 1. 请求参数，深度遍历，string类型，删除两边空白字符；
