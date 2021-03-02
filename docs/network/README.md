@@ -97,3 +97,8 @@ Chrome 浏览器关闭HSTS操作。地址栏中输入 chrome://net-internals/#hs
 + 图片懒加载
 + 骨架屏
 + HTTP3
+
++ [performance](https://javascript.ruanyifeng.com/bom/history.html#)
++ history
++ websocket
++ AJAX

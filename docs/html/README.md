@@ -7,7 +7,7 @@ meta:
 ---
 # html-css学习
 
-+ flex，gird，css集成
++ gird，css集成
 + transform
 + transition/animation
 + css选择器优先级 https://juejin.cn/post/6844903709772611592
