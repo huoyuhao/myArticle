@@ -14,9 +14,11 @@ meta:
 + input 文件 引用
 + 设计模式
 + class语法糖的原理
++ ajax的封装
++ Generator函数
 
 + export与export default差异总结 https://juejin.cn/post/6844903585805762573
 + 什么情况会阻塞页面的加载
 + 单点登陆
 
-+ 
++ 垃圾回收
