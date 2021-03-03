@@ -1,11 +1,4 @@
----
-meta:
-  - name: description
-    content: Vue学习
-  - name: keywords
-    content: Vue学习,工具使用,JavaScript,前端,学习,Vue
----
-# Vue学习
+# 未完成目录
 
 vue
 diff
