@@ -7,9 +7,9 @@ meta:
 ---
 # JavaScript中call等方法
 
-## call
+## 1. call
 
-### call原型
+### 1.1 call原型
 
 Function.prototype.call()
 
@@ -39,9 +39,9 @@ console.log(new Food('cheese', 5).name);
 // expected output: "cheese"
 ```
 
-### 模拟实现call
+### 1.2 模拟实现call
 
-#### 1. 实现主要功能
+#### 1.2.1 实现主要功能
 
 + call 改变了 this 的指向，指向到 第一个参数
 + 函数执行了
@@ -55,7 +55,7 @@ Function.prototype.newCall = function (context) {
 }
 ```
 
-#### 2. 增加执行时的参数
+#### 1.2.2 增加执行时的参数
 
 ```js
 // 第二版
@@ -66,7 +66,7 @@ Function.prototype.newCall = function (context, ...args) {
 }
 ```
 
-#### 3. this 参数可以传 null，当为 null 的时候，视为指向 window
+#### 1.2.3 this 参数可以传 null，当为 null 的时候，视为指向 window
 
 ```js
 // 第三版
@@ -78,7 +78,7 @@ Function.prototype.newCall = function (context = window, ...args) {
 }
 ```
 
-#### 4. 数是可以有返回值的
+#### 1.2.4 数是可以有返回值的
 
 ```js
 // 第四版
@@ -91,7 +91,7 @@ Function.prototype.newCall = function (context = window, ...args) {
 }
 ```
 
-#### 5. key属性原本已存在（我们用的是fn属性）
+#### 1.2.5 key属性原本已存在（我们用的是fn属性）
 
 + 使用symbol
 + 使用随机生成，然后原属性值取出，使用并删除后，再复制回来
@@ -114,7 +114,7 @@ Function.prototype.newCall = function (context = window, ...args) {
 }
 ```
 
-#### 6. 容错处理
+#### 1.2.6 容错处理
 
 ```js
 // 第六版
@@ -131,9 +131,9 @@ Function.prototype.newCall = function (context = window, ...args) {
 }
 ```
 
-## apply
+## 2. apply
 
-### apply原型
+### 2.1 apply原型
 
 Function.prototype.apply()
 
@@ -148,7 +148,7 @@ array.push.apply(array, elements);
 console.info(array); // ["a", "b", 0, 1, 2]
 ```
 
-### 模拟实现apply
+### 2.2 模拟实现apply
 
 ```js
 // 第六版
@@ -167,9 +167,9 @@ Function.prototype.newApply = function (context = window, args = []) {
 }
 ```
 
-## bind
+## 3. bind
 
-### bind原型
+### 3.1 bind原型
 
 Function.prototype.bind()
 
@@ -204,7 +204,7 @@ console.log(obj.habit); // shopping
 console.log(obj.friend); // kevin
 ```
 
-### 模拟实现bind
+### 3.2 模拟实现bind
 
 ```js
 Function.prototype.newBind = function (context = window, ...args1) {

@@ -6,15 +6,16 @@ let fs = require("fs")
 let server = http.createServer()
 
 const dirPath = "/data/myArticle/docs/"
-const dirList = ['html', 'js', 'linux', 'network', 'tool', 'vue']
+const dirList = ['web', 'linux', 'network', 'other', 'frame']
 const reg = /(?<=[0-9]+\-)(.*)(?=\.md)/ig
+const regFile = /(?<=[0-9]+?\-)(.*)/ig
 const result = {};
 
 dirList.forEach(item => {
   const path = dirPath + item
   const readDir = fs.readdirSync(path)
   result[`/${item}/`] = []
-  readDir.forEach((name, index) => {
+  readDir.forEach((name) => {
     if (/\.+/.test(name)) { // 文件
       if (reg.test(name)) {
         const [fileName] = name.match(reg)
@@ -23,7 +24,8 @@ dirList.forEach(item => {
     } else { // 文件夹
       const childPath = dirPath + item + '/' + name
       const childDir = fs.readdirSync(childPath)
-      const parentData = { title: name, sidebarDepth: 2, path: `/${item}/${name}/`, children: [] }
+      const [fileName] = name.match(regFile);
+      const parentData = { title: fileName, sidebarDepth: 2, children: [] }
       result[`/${item}/`].push(parentData)
       childDir.forEach(child => {
         if (/\.+/.test(child)) { // 文件

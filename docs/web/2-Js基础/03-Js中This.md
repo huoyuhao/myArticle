@@ -7,7 +7,7 @@ meta:
 ---
 # JavaScript中This
 
-## 全局环境
+## 1. 全局环境
 
 除了在声明的对象内被调用, this 在 严格模式下 永远是 undefined。
 
@@ -26,7 +26,7 @@ meta:
 })()
 ```
 
-## 作为对象的方法调用
+## 2. 作为对象的方法调用
 
 当一个函数被当作一个对象的方法调用的时候
 
@@ -58,7 +58,7 @@ test() // Window
 
 总结：**this永远指向的是最后调用它的对象，也就是看它执行的时候是谁调用的**
 
-## 构造函数
+## 3. 构造函数
 
 ```js
 function Student (name) {
@@ -76,7 +76,7 @@ let result = new Student('凉风');
 + 这个对象会被执行[[Prototype]]（也就是__proto__）链接
 + 生成的新对象会绑定到函数调用的this
 + 通过new创建的每个对象将最终被[[Prototype]]链接到这个函数的prototype对象上
-+ 如果函数没有返回对象类型Object(包含Functoin, Array, Date, RegExg, Error)，那么new表达式中的函数调用会自动返回这个新的对象
++ 如果函数没有返回对象类型Object(包含Function, Array, Date, RegExg, Error)，那么new表达式中的函数调用会自动返回这个新的对象
 
 由此可以知道：new操作符调用时，this指向生成的新对象
 
@@ -93,7 +93,7 @@ console.log(result); // { name: '凉风' }
 // 如果返回函数f，则result是函数f，如果是对象{}，则result是对象{}
 ```
 
-## 事件绑定
+## 4. 事件绑定
 
 事件绑定共有三种方式：行内绑定、动态绑定、事件监听；
 
@@ -144,7 +144,7 @@ onclick 和 addEventListener 是指向绑定事件的元素。
 + ev.currentTarget是绑定事件的元素，而ev.target是当前触发事件的元素。比如这里的分别是ul和li
 + 但也可能点击的是ul，这时ev.currentTarget和ev.target就相等了
 
-## 定时函数
+## 5. 定时函数
 
 ```js
 let obj = {
@@ -167,7 +167,7 @@ setInterval() 是window对象下内置的一个方法，接受两个参数，第
 
 而在 setInterval('obj.fun()',1000) 中的第一个参数，实际则是传入的一段可执行的 JS 代码；1000毫秒后当 JS 引擎来执行这段代码时，则是通过 obj 对象来找到 fun 函数并调用执行，那么函数的运行环境依然在 对象 obj 内，所以函数内部的this也就指向了 obj 对象；
 
-## call/apply/bind
+## 6. call/apply/bind
 
 fun.call(thisArg, arg1, arg2, ...)
 
@@ -179,9 +179,9 @@ apply和call类似。只是参数不一样。它的参数是数组（或者类�
 
 bind和call和apply类似，第一个参数也是修改this指向，只不过返回值是新函数，新函数也能当做构造函数（new）调用
 
-## 箭头函数
+## 7. 箭头函数
 
-### 特点
+### 7.1 特点
 
 + 1、没有自己的this、super、arguments和new.target绑定
 + 2、不能使用new来调用
@@ -189,7 +189,7 @@ bind和call和apply类似，第一个参数也是修改this指向，只不过返
 + 4、不可以改变this的绑定
 + 5、形参名称不能重复
 
-### 箭头函数this指向
+### 7.2 箭头函数this指向
 
 箭头函数内部的this是词法作用域，由上下文确定，默认绑定外层this。
 
@@ -215,7 +215,7 @@ student.doSth(); // '凉风'
 student.arrowDoSth2(); // 'window'
 ```
 
-### 不能改变this
+### 7.3 不能改变this
 
 ```js
 let student = {
@@ -234,7 +234,7 @@ student.doSth().call(person); // '凉风'  'arrowFn:' '凉风'
 student.doSth.call(person)(); // 'person' 'arrowFn:' 'person'
 ```
 
-## 参考
+## 8. 参考
 
 [JavaScript中的this](https://juejin.im/entry/5b8e6666518825430367172b)
 
