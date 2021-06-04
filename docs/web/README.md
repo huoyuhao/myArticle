@@ -1,6 +1,5 @@
 # 未完成目录
 
-+ gird，css集成
 + transform
 + transition/animation
 + css动画
