@@ -2,10 +2,10 @@
 
 + transform
 + transition/animation
-+ css动画
++ 重排重绘
 
-+ DOM - 事件 / 操作 / 位置
-+ 深拷贝
++ DOM - 事件冒泡捕获 / 事件委托 / DOM操作 / 位置
+
 + 高阶函数 柯粒化
 + input 文件 引用
 + 垃圾手机机制/内存泄漏
