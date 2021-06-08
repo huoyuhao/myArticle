@@ -7,7 +7,7 @@ meta:
 ---
 # 前端vscode插件
 
-## 插件推荐
+## 1. 插件推荐
 
 ### Auto Close Tag
 
@@ -309,7 +309,7 @@ styled-components 高亮支持
 
 styled-jsx 高亮支持
 
-## vscode 设置文件
+## 2. vscode 设置文件
 
 ```json
 {
@@ -323,11 +323,18 @@ styled-jsx 高亮支持
     "vue": "html",
     "wxml": "html"
   },
-  "cSpell.userWords": [
-  ],
-  "sync.gist": "b01470ecd5c7cdc4d94e4f4444e8ebbb",
-  "sync.forceUpload": true,
-  "sync.autoUpload": true,
+  "files.associations": {
+    "*.tpl": "html",
+    "*.vtpl": "html",
+    "*.cjson": "jsonc",
+    "*.wxss": "css",
+    "*.wxs": "javascript"
+  },
+  "prettier.endOfLine": "crlf",
+  "cSpell.userWords": [],
+  "sync.gist": "",
+  "sync.forceUpload": false,
+  "sync.autoUpload": false,
   "editor.fontSize": 14, // 字体大小
   "editor.tabSize": 2, // table 2个空格
   "editor.minimap.enabled": false, // 不显示迷你地图
@@ -339,25 +346,25 @@ styled-jsx 高亮支持
     "editor.lineHighlightBackground": "#1a2c1c", // 光标所在行的背景色
     "editor.lineHighlightBorder": "#7154978a" // 光标所在行的边框色
   },
-  "files.associations": { // 文件读取方式修改 代码自动补齐
-    "*.html":"html",
-    "*.tpl": "html", // 支持 tpl 等文件高亮渲染方法
-    "*.nj":"html",
-    "*.vue":"html",
-    "*.cjson": "jsonc",
-    "*.wxss": "css",
-    "*.wxs": "javascript"
-  },
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
+    "source.fixAll.eslint": false,
     // For Stylelint 保存格式化css
-    "source.fixAll.stylelint": true
+    "source.fixAll.stylelint": false
   },
   "workbench.activityBar.visible": true, // 启用导航路径
   "search.followSymlinks": false,
-  "eslint.validate": ["javascript", "javascriptreact", {
-    "language": "vue",
-    "autoFix": true
+  // Set the default
+  "editor.formatOnSave": false,
+  // Enable per-language
+  "eslint.validate": [
+    "javascript",
+    {
+      "language": "vue",
+      "autoFix": true
+    },
+    {
+      "language": "html",
+      "autoFix": true
     }
   ],
   "vsicons.dontShowNewVersionMessage": true,
@@ -379,5 +386,23 @@ styled-jsx 高亮支持
     "**/logs": true
   },
   "explorer.compactFolders": false,
+  "vetur.validation.template": false,
+  "minapp-vscode.disableAutoConfig": true,
+  "git.suggestSmartCommit": false,
+  // 解决vscode中tab键无效
+  "emmet.syntaxProfiles": {
+    "vue-html":"html",
+    "vue":"html"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "terminal.integrated.tabs.enabled": true,
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
 }
+
 ```
