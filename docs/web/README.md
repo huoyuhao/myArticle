@@ -4,7 +4,7 @@
 + transition/animation
 + 重排重绘
 
-+ DOM - 事件冒泡捕获 / 事件委托 / DOM操作 / 位置
++ DOM - DOM操作 / 位置
 
 + 高阶函数 柯粒化
 + input 文件 引用
