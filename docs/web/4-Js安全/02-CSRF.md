@@ -7,7 +7,7 @@ meta:
 ---
 # 跨站请求伪造
 
-## 介绍
+## 1. 介绍
 
 CSRF（Cross-site request forgery），中文名称：跨站请求伪造，也被称为：one click attack/session riding，缩写为：CSRF/XSRF。
 
@@ -27,7 +27,7 @@ CSRF（Cross-site request forgery），中文名称：跨站请求伪造，也�
 
 ![CSRF攻击过程](/img/CSRF攻击过程.png)
 
-## 攻击对象
+## 2. 攻击对象
 
 在讨论如何抵御 CSRF 之前，先要明确 CSRF 攻击的对象，也就是要保护的对象。
 
@@ -37,7 +37,7 @@ CSRF 攻击是黑客借助受害者的 cookie 骗取服务器的信任，但是�
 
 比如银行系统中转账的请求会直接改变账户的金额，会遭到 CSRF 攻击，需要保护。而查询余额是对金额的读取操作，不会改变数据，CSRF 攻击无法解析服务器返回的结果，无需保护。
 
-## 特点
+## 3. 特点
 
 + 攻击一般发起在第三方网站，而不是被攻击的网站。被攻击的网站无法防止攻击发生。
 
@@ -47,7 +47,7 @@ CSRF 攻击是黑客借助受害者的 cookie 骗取服务器的信任，但是�
 
 + 跨站请求可以用各种方式：图片URL、超链接、CORS、Form提交等等。部分请求方式可以直接嵌入在第三方论坛、文章中，难以进行追踪。
 
-## 防范措施
+## 4. 防范措施
 
 上文中讲了CSRF的两个特点：
 
@@ -61,7 +61,7 @@ CSRF 攻击是黑客借助受害者的 cookie 骗取服务器的信任，但是�
 
 + 提交时要求附加本域才能获取的信息
 
-### 验证 HTTP Referer 字段
+### 4.1 验证 HTTP Referer 字段
 
 根据 HTTP 协议，在 HTTP 头中有一个字段叫 `Referer`，它记录了该 HTTP 请求的来源地址。也就是说，服务器会验证客户端的请求来源，如果本网站请求的则响应，否则不响应。
 
@@ -71,13 +71,13 @@ CSRF 攻击是黑客借助受害者的 cookie 骗取服务器的信任，但是�
 
 2. 用户自己可以设置浏览器使其在发送请求时不再提供 Referer
 
-### 使用 token （Anti CSRF Token）
+### 4.2 使用 token （Anti CSRF Token）
 
 当我们向服务器请求资源的时候，服务器返回资源的同时向客户端下发一个token，客户端在每次请求的时候都需要带上这个token。服务器在收到请求后会先验证这个token的有效性。如果有效，会成功响应。否则，会拒绝响应。
 
 这个token可以看作是客户端和服务器之间的一个凭证，所以，是不能让第三方知道的。一般我们可以将token保存在用户的session或者浏览器的cookie中。
 
-### SameSite限制
+### 4.3 SameSite限制
 
 Chrome 51 开始，浏览器的 Cookie 新增加了一个SameSite属性，用来防止 CSRF 攻击和用户追踪。
 
@@ -89,11 +89,11 @@ Cookie 的SameSite属性用来限制第三方 Cookie，从而减少安全风险�
 + Lax
 + None
 
-#### Strict
+#### 4.4 Strict
 
 Strict最为严格，完全禁止第三方 Cookie，跨站点时，任何情况下都不会发送 Cookie。换言之，只有当前网页的 URL 与请求目标一致，才会带上 Cookie。
 
-#### Lax
+#### 4.5 Lax
 
 Lax规则稍稍放宽，大多数情况也是不发送第三方 Cookie，但是导航到目标网址的 Get 请求除外。
 
@@ -107,11 +107,11 @@ Lax规则稍稍放宽，大多数情况也是不发送第三方 Cookie，但是�
 
 设置了Strict或Lax以后，基本就杜绝了 CSRF 攻击。当然，前提是用户浏览器支持 SameSite 属性
 
-#### None
+#### 4.6 None
 
 Chrome 计划将Lax变为默认设置。这时，网站可以选择显式关闭SameSite属性，将其设为None。不过，前提是必须同时设置Secure属性（Cookie 只能通过 HTTPS 协议发送），否则无效
 
-## 参考资料
+## 5. 参考资料
 
 [web安全之csrf攻击](https://zhaosaisai.com/blog/2018/web%E5%AE%89%E5%85%A8%E4%B9%8Bcsrf%E6%94%BB%E5%87%BB.html)
 

