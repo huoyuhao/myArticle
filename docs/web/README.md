@@ -14,6 +14,6 @@
 + Generator函数
 + [export与export default差异总结](https://juejin.cn/post/6844903585805762573)
 
-+ ajax的封装
 + promise\await
 + promise.all/promise.retry
++ es6
