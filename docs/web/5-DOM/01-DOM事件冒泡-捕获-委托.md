@@ -13,7 +13,7 @@ meta:
 
 当一个事件发生在一个元素上，它会首先运行在该元素上的处理程序，然后运行其父元素上的处理程序，然后一直向上到其他祖先上的处理程序
 
-### 1.2 event.target与event.currentTarget区别
+### 1.2 event.target 与 currentTarget区别
 
 父元素上的处理程序始终可以获取事件实际发生位置的详细信息。
 

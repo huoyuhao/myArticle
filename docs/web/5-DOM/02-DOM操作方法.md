@@ -10,11 +10,11 @@ meta:
 
 ## 1. 创建节点
 
-### 1.1 document.createElement(tagName)
+### 1.1 document.createElement()
 
 创建一个由tagName决定的HTML元素
 
-### 1.2 document.createTextNode(data)
+### 1.2 document.createTextNode()
 
 创建一个文本节点，文本内容为data
 
@@ -117,11 +117,11 @@ let replacedChild = parentNode.replaceChild(newChild, oldChild);
 
 ## 4. 节点选择
 
-### 4.1 document.querySelector(selectors)
+### 4.1 document.querySelector()
 
-selectors 是一个字符串，包含一个或多个css选择器。返回获取到的元素。
+入参selectors 是一个字符串，包含一个或多个css选择器。返回获取到的元素。
 
-### 4.2 document.querySelectorAll(selectors)
+### 4.2 document.querySelectorAll()
 
 和querySelector用法类似，只是返回值为NodeList对象。
 
@@ -143,11 +143,15 @@ selectors 是一个字符串，包含一个或多个css选择器。返回获取�
 
 ## 5. 属性操作
 
-### 5.1 element.setAttribute(name /*属性名*/, value /*属性值*/)
+### 5.1 element.setAttribute()
+
+参数：name /*属性名*/, value /*属性值*/
 
 给元素设置属性。如果该属性已存在，则更新。
 
-### 5.2 element.removeAttribute(attrName /*要删除的属性名*/)
+### 5.2 element.removeAttribute()
+
+参数：attrName /*要删除的属性名*/
 
 删除元素的某个属性。
 
@@ -161,11 +165,15 @@ selectors 是一个字符串，包含一个或多个css选择器。返回获取�
 
 ## 6. DOM事件
 
-### 6.1 element.addEventListener(type, listener, [, options])
+### 6.1 element.addEventListener()
+
+参数：type, listener, [, options]
 
 给元素添加指定事件type以及响应该事件的回调函数listener。
 
-### 6.2 element.removeEventListener(type, listener, [, options])
+### 6.2 element.removeEventListener()
+
+参数：type, listener, [, options]
 
 移除元素上指定事件，如果元素上分别在捕获和冒泡阶段都注册了事件，需要分别移除。
 

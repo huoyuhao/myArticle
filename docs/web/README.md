@@ -3,7 +3,6 @@
 + transform
 + transition/animation
 + 重排重绘
-+ DOM位置
 
 + 高阶函数 柯粒化
 + input 文件 引用
