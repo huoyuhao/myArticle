@@ -21,7 +21,7 @@ meta:
 + 省去了CSS渲染树的构建查找等工作
 + 结构样式没有分离，导致代码冗余不利于维护
 
-`<div style="border:1px red solid;">yuhoo</div>`
+`<div style="border:1px red solid;">liam</div>`
 
 #### 1.1.2 内嵌样式--内部样式表
 
@@ -44,7 +44,7 @@ div{ margin : 0; padding: 0; border: 1px red solid; }
 
 链接样式使用最多，推荐使用的一种方法，在`<head></head>`标签之间用`<link ...../>`引入css文件
 
-`<link rel="stylesheet" href="yuhoo.css" media="all"/>`
+`<link rel="stylesheet" href="liam.css" media="all"/>`
 
 #### 1.1.4 导入外部样式表—在head部分加入
 
@@ -132,7 +132,7 @@ class命名使用字符 `-` 增加易读性，而且和css属性名称保持了�
 
 ```css
 @charset "UTF-8";
-.yuhoo{}
+.liam{}
 ```
 
 ### 2.3 代码格式化
@@ -141,10 +141,10 @@ class命名使用字符 `-` 增加易读性，而且和css属性名称保持了�
 
 ```css
 /* 一种是紧凑格式 (Compact) */
-.yuhoo{ display: block; width: 50px; }
+.liam{ display: block; width: 50px; }
 
 /* 一种是展开格式（Expanded）*/
-.yuhoo{
+.liam{
   display: block;
   width: 50px;
 }
@@ -159,12 +159,12 @@ class命名使用字符 `-` 增加易读性，而且和css属性名称保持了�
 
 ```css
 /* 推荐 */
-.yuhoo{
+.liam{
   display: block;
 }
 
 /* 不推荐 */
-.yuhoo{
+.liam{
   DISPLAY: BLOCK;
 }
 ```
@@ -174,7 +174,7 @@ class命名使用字符 `-` 增加易读性，而且和css属性名称保持了�
 统一使用两个空格进行代码缩进，使得各编辑器表现一致（各编辑器有相关配置）
 
 ```css
-.yuhoo {
+.liam {
   width: 100%;
   height: 100%;
 }
@@ -192,33 +192,33 @@ class命名使用字符 `-` 增加易读性，而且和css属性名称保持了�
 
 ```css
 /* 推荐 */
-.yuhoo {
+.liam {
   width: 100%;
   box-shadow: 1px 1px 1px #333, 2px 2px 2px #ccc;
   color: rgba(255, 255, 255, .5);
   color: #fff;
   margin: 0 10px;
 }
-.yuhoo,
-.yuhoo-logo {
+.liam,
+.liam-logo {
   color: #ff0;
 }
-.yuhoo > .user{}
+.liam > .user{}
 
 /* 不推荐 */
-.yuhoo{ /* 1 */
+.liam{ /* 1 */
   width:100%; /* 1 */
   box-shadow: 1px 1px 1px #333,2px 2px 2px #ccc; /* 2 */
   color: rgba( 255,255,255,0.5 ); /* 4 */
   color: #ffffff; /* 5 */
   margin: 0px 10px; /* 6 */
 }
-.yuhoo, .yuhoo-logo { /* 3 */
+.liam, .liam-logo { /* 3 */
   color: #ff0;
 }.nav{ /* 3 */
   color: #fff;
 }
-.yuhoo>.user{} /* 7 */
+.liam>.user{} /* 7 */
 ```
 
 ### 2.7 属性值引号
@@ -227,12 +227,12 @@ css属性值需要用到引号时，统一使用双引号
 
 ```css
 /* 推荐 */
-.yuhoo {
+.liam {
   font-family: "Hiragino Sans GB";
 }
 
 /* 不推荐 */
-.yuhoo {
+.liam {
   font-family: 'Hiragino Sans GB';
 }
 ```
@@ -257,8 +257,8 @@ CSS选择器的匹配是**从右向左**进行的，这一策略导致了不同�
 
 ```css
 /* 推荐 */
-.yuhoo {}
-.yuhoo li {}
+.liam {}
+.liam li {}
 .list > li > .item {}
 .pro-list p {}
 #username input {}
@@ -266,7 +266,7 @@ CSS选择器的匹配是**从右向左**进行的，这一策略导致了不同�
 
 /* 不推荐 */
 *{}
-#yuhoo {}
+#liam {}
 .container .list > li > p {}
 p {}
 .page .header .login #username input {}
@@ -281,13 +281,13 @@ p {}
 
 ```css
 /* 推荐 */
-.yuhoo {
+.liam {
   margin: 10px 0 .8px;
   border: 1px solid #CCC;
 }
 
 /* 不推荐 */
-.yuhoo{
+.liam{
   margin: 10px 0px 0.8px;
   border-width: 1px;
   border-style: solid;
@@ -305,7 +305,7 @@ p {}
 + 其他属性（CSS3）：content / cursor / border-radius / box-shadow / text-shadow / background:linear-gradient …
 
 ```css
-.yuhoo {
+.liam {
   display: block;
   position: relative;
   float: left;
@@ -352,12 +352,12 @@ p {}
 
 ```css
 /* 推荐 */
-.yuhoo {
+.liam {
   font-family: "Hiragino Sans GB";
 }
 
 /* 不推荐 */
-.yuhoo {
+.liam {
   font-family: 'Hiragino Sans GB';
 }
 ```
@@ -369,13 +369,13 @@ p {}
 
 ```css
 /* 推荐 */
-.yuhoo {
+.liam {
   opacity: .8;
   border: none;
 }
 
 /* 不推荐 */
-.yuhoo {
+.liam {
   opacity: 0.8;
   border: 0;
 }
@@ -388,10 +388,10 @@ p {}
 
 ```css
 /* 推荐 */
-.yuhoo {
+.liam {
   background: url(bg.png);
 }
-.yuhoo {
+.liam {
   background: url(//baidu.com/img/bg.png) no-repeat 0 0;
 }
 ```
@@ -404,14 +404,14 @@ p {}
 
 ```css
 /* 推荐 */
-.yuhoo {
+.liam {
   border-color: #00FF00;
   background-color: #FFF;
   color: #FF0000;
 }
 
 /* 不推荐 */
-.yuhoo {
+.liam {
   border-color: rgb(0, 255, 0);
   background-color: #FFFFFF;
   color: red;
@@ -482,7 +482,7 @@ CSS 的字重分 100 – 900 共九档，但目前受字体本身质量和浏览
 
 ```css
 /* 推荐 */
-.yuhoo{}
+.liam{}
 
 /* 不推荐 */
 .jdc {
@@ -602,7 +602,7 @@ a:hover { text-decoration: underline; }
 CSS3 浏览器私有前缀在前，标准前缀在后
 
 ```css
-.yuhoo {
+.liam {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -o-border-radius: 10px;
