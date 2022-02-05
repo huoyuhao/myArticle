@@ -3,7 +3,7 @@ module.exports = {
   description: '霍雨浩的个人博客，每天进步一点点，加油！！！',
   head: [ // 注入到当前页面的 HTML <head> 中的标签
     ['link', { rel: 'icon', href: '/logo.png' }], // 增加一个自定义的 favicon
-    ['meta', { name: 'author', content: 'yuhoo' }],
+    ['meta', { name: 'author', content: 'liam' }],
     ['meta', { name: 'keywords', content: '前端 web 霍雨浩 个人博客' }],
     ["meta", { name: "apple-mobile-web-app-capable", content: 'yes' }]
   ],

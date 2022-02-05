@@ -84,13 +84,13 @@ Host liam
   Port XX
   IdentityFile //Users/liam/.ssh/id_rsa
 
-Host yuhoo
+Host liam
   HostName X.X.X.X
   User root
   Port 22
   IdentityFile //Users/liam/XX.pem
 
-Host yuhoo
+Host liam
   HostName X.X.X.X
   User root
   Port 22

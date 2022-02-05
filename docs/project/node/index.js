@@ -18,7 +18,7 @@ var app = express()
 
 app.get("/crossDomain", function(req, res) {
   var query = req.query
-  var reqData = { name: 'Yuhoo' }
+  var reqData = { name: 'liam' }
   console.log(query)
   if (query.callback) {
     var str =  query.callback + '(' + JSON.stringify(reqData) + ')' // jsonp
@@ -28,7 +28,7 @@ app.get("/crossDomain", function(req, res) {
   }
 })
 app.get("/crossDomain2", function(req, res) {
-  var reqData = { name: 'Yuhoo' }
+  var reqData = { name: 'liam' }
   res.end(JSON.stringify(reqData))
 })
 

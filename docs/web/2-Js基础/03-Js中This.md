@@ -35,17 +35,17 @@ function test () {
   console.log(this.name)
 }
 let obj = {
-  name: 'yuhoo',
+  name: 'liam',
   foo: test
 }
-obj.foo() // yuhoo
+obj.foo() // liam
 ```
 
 在 js 中一切都是对象，函数也是一个对象，对于 `test` ，它只是一个函数名，函数的引用，它指向这个函数，当 `foo = test`，`foo` 同样也指向了这个函数
 
 ```js
 let obj = {
-  name: 'yuhoo',
+  name: 'liam',
   foo: function () {
     console.log(this)
   }
