@@ -89,11 +89,11 @@ Cookie 的SameSite属性用来限制第三方 Cookie，从而减少安全风险�
 + Lax
 + None
 
-#### 4.4 Strict
+#### 4.3.1 Strict
 
 Strict最为严格，完全禁止第三方 Cookie，跨站点时，任何情况下都不会发送 Cookie。换言之，只有当前网页的 URL 与请求目标一致，才会带上 Cookie。
 
-#### 4.5 Lax
+#### 4.3.2 Lax
 
 Lax规则稍稍放宽，大多数情况也是不发送第三方 Cookie，但是导航到目标网址的 Get 请求除外。
 
@@ -107,7 +107,7 @@ Lax规则稍稍放宽，大多数情况也是不发送第三方 Cookie，但是�
 
 设置了Strict或Lax以后，基本就杜绝了 CSRF 攻击。当然，前提是用户浏览器支持 SameSite 属性
 
-#### 4.6 None
+#### 4.3.3 None
 
 Chrome 计划将Lax变为默认设置。这时，网站可以选择显式关闭SameSite属性，将其设为None。不过，前提是必须同时设置Secure属性（Cookie 只能通过 HTTPS 协议发送），否则无效
 
