@@ -12,5 +12,5 @@ features:
   details: 是这样一种愤怒——当你发现计算机懒洋洋地不给出结果。于是你写出更优秀的代码，能尽快真正的解决问题。至少看上去是这样。
 - title: 傲慢：
   details: 极度的自信，使你有信心写出（或维护）别人挑不出毛病的程序。
-footer: MIT Licensed | Copyright © 2019 - 2021 , All Rights Reserved. | 粤ICP备20038622号-1 | huoyuhao@nuaa.edu.cn
+footer: MIT Licensed | Copyright © 2019 - 2022 , All Rights Reserved. | 粤ICP备2021106764号-1 | huoyuhao@nuaa.edu.cn
 ---

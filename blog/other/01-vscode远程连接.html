@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vscode远程连接</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/logo.png">
+    <meta name="description" content="霍雨浩的个人博客，每天进步一点点，加油！！！">
+    <meta name="author" content="liam">
+    <meta name="keywords" content="前端 web 霍雨浩 个人博客">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="preload" href="/assets/css/0.styles.f707576d.css" as="style"><link rel="preload" href="/assets/js/app.56cd5ac4.js" as="script"><link rel="preload" href="/assets/js/2.cfb1ba91.js" as="script"><link rel="preload" href="/assets/js/30.8be5bca5.js" as="script"><link rel="prefetch" href="/assets/js/10.2fce8ed4.js"><link rel="prefetch" href="/assets/js/11.ed70a74b.js"><link rel="prefetch" href="/assets/js/12.d2311964.js"><link rel="prefetch" href="/assets/js/13.b135f199.js"><link rel="prefetch" href="/assets/js/14.8b082744.js"><link rel="prefetch" href="/assets/js/15.88d90214.js"><link rel="prefetch" href="/assets/js/16.29006f6e.js"><link rel="prefetch" href="/assets/js/17.4e67e84e.js"><link rel="prefetch" href="/assets/js/18.00da43f2.js"><link rel="prefetch" href="/assets/js/19.611f30c2.js"><link rel="prefetch" href="/assets/js/20.045a9abf.js"><link rel="prefetch" href="/assets/js/21.88511053.js"><link rel="prefetch" href="/assets/js/22.ef5ddb27.js"><link rel="prefetch" href="/assets/js/23.03b49b23.js"><link rel="prefetch" href="/assets/js/24.b9e518c3.js"><link rel="prefetch" href="/assets/js/25.c3bd9476.js"><link rel="prefetch" href="/assets/js/26.a3c2a9b7.js"><link rel="prefetch" href="/assets/js/27.793c5032.js"><link rel="prefetch" href="/assets/js/28.783b9967.js"><link rel="prefetch" href="/assets/js/29.93ffbe6e.js"><link rel="prefetch" href="/assets/js/3.bd64d155.js"><link rel="prefetch" href="/assets/js/31.fc7c206d.js"><link rel="prefetch" href="/assets/js/32.39c8ecb0.js"><link rel="prefetch" href="/assets/js/33.8f743d81.js"><link rel="prefetch" href="/assets/js/34.5dacc676.js"><link rel="prefetch" href="/assets/js/35.46dc00d9.js"><link rel="prefetch" href="/assets/js/36.ced300b2.js"><link rel="prefetch" href="/assets/js/37.bb78bd96.js"><link rel="prefetch" href="/assets/js/38.35f1322f.js"><link rel="prefetch" href="/assets/js/39.772550ef.js"><link rel="prefetch" href="/assets/js/4.bd0ac780.js"><link rel="prefetch" href="/assets/js/40.c0444e10.js"><link rel="prefetch" href="/assets/js/41.ee1d6ce9.js"><link rel="prefetch" href="/assets/js/42.2cc5d9eb.js"><link rel="prefetch" href="/assets/js/43.52266420.js"><link rel="prefetch" href="/assets/js/44.0d706be4.js"><link rel="prefetch" href="/assets/js/45.d70ee8fc.js"><link rel="prefetch" href="/assets/js/46.3adf0186.js"><link rel="prefetch" href="/assets/js/47.7123aed4.js"><link rel="prefetch" href="/assets/js/48.95171c3e.js"><link rel="prefetch" href="/assets/js/49.eaaacbf8.js"><link rel="prefetch" href="/assets/js/5.b6df23a7.js"><link rel="prefetch" href="/assets/js/50.1f23e7cc.js"><link rel="prefetch" href="/assets/js/51.3efd8a4c.js"><link rel="prefetch" href="/assets/js/52.f4a17f81.js"><link rel="prefetch" href="/assets/js/53.7d3a116b.js"><link rel="prefetch" href="/assets/js/54.3c12b456.js"><link rel="prefetch" href="/assets/js/55.fab612dd.js"><link rel="prefetch" href="/assets/js/56.a52384fe.js"><link rel="prefetch" href="/assets/js/57.c2806e8f.js"><link rel="prefetch" href="/assets/js/58.5a0a9785.js"><link rel="prefetch" href="/assets/js/59.383f91a0.js"><link rel="prefetch" href="/assets/js/6.f13cddbb.js"><link rel="prefetch" href="/assets/js/60.3362efb4.js"><link rel="prefetch" href="/assets/js/61.5c8a06b3.js"><link rel="prefetch" href="/assets/js/62.e2d65126.js"><link rel="prefetch" href="/assets/js/63.71a2cd52.js"><link rel="prefetch" href="/assets/js/64.35c80339.js"><link rel="prefetch" href="/assets/js/65.5373137c.js"><link rel="prefetch" href="/assets/js/7.447f3437.js"><link rel="prefetch" href="/assets/js/8.9e318401.js"><link rel="prefetch" href="/assets/js/9.2f1ed0c9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f707576d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/header-logo.png" alt="" class="logo"> <!----></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><a href="/frame/" class="nav-link">
+  Frame
+</a></div><div class="nav-item"><a href="/network/" class="nav-link">
+  Network
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link">
+  Linux
+</a></div><div class="nav-item"><a href="/other/" class="nav-link router-link-active">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/huoyuhao/myArticle" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><a href="/frame/" class="nav-link">
+  Frame
+</a></div><div class="nav-item"><a href="/network/" class="nav-link">
+  Network
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link">
+  Linux
+</a></div><div class="nav-item"><a href="/other/" class="nav-link router-link-active">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/huoyuhao/myArticle" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/other/01-vscode插件.html" class="sidebar-link">vscode插件</a></li><li><a href="/other/01-vscode远程连接.html" class="active sidebar-link">vscode远程连接</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/other/01-vscode远程连接.html#配置云服务器" class="sidebar-link">配置云服务器</a></li><li class="sidebar-sub-header"><a href="/other/01-vscode远程连接.html#问题" class="sidebar-link">问题</a></li></ul></li><li><a href="/other/02-git.html" class="sidebar-link">git</a></li><li><a href="/other/03-fiddler.html" class="sidebar-link">fiddler</a></li><li><a href="/other/04-docker.html" class="sidebar-link">docker</a></li><li><a href="/other/05-eslint.html" class="sidebar-link">eslint</a></li><li><a href="/other/06-npm使用.html" class="sidebar-link">npm使用</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vscode远程连接"><a href="#vscode远程连接" class="header-anchor">#</a> vscode远程连接</h1> <h2 id="配置云服务器"><a href="#配置云服务器" class="header-anchor">#</a> 配置云服务器</h2> <p>设置tlinux云开发机支持ssh-public-key登录</p> <div class="language-linux line-numbers-mode"><pre class="language-text"><code>vim /etc/ssh/sshd_config
+
+AllowAgentForwarding yes #vscode使用TcpForwarding模式，需要把这两项配置打开
+AllowTcpForwarding yes #vscode使用TcpForwarding模式，需要把这两项配置打开
+RSAAuthentication yes #打开RSA签名认证模式
+PubkeyAuthentication yes #打开公钥认证模式
+# The default is to check both .ssh/authorized_keys and .ssh/authorized_keys2
+# but this is overridden so installations will only check .ssh/authorized_keys
+AuthorizedKeysFile .ssh/authorized_keys 
+#设置默认的公钥保存文件，设置的值是.ssh/authorized_keys，设置后实际读取的文件为~/.ssh/authorized_keys
+
+systemctl restrt sshd
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h3 id="本地开发安装vscode插件"><a href="#本地开发安装vscode插件" class="header-anchor">#</a> 本地开发安装vscode插件</h3> <p>安装插件<code>Remote SSH</code></p> <p>安装完成填写连接服务器的IP、端口、登录用户等信息，点击连接</p> <h2 id="问题"><a href="#问题" class="header-anchor">#</a> 问题</h2> <h3 id="_1-解決rpm-conflicts-with-file-from-package"><a href="#_1-解決rpm-conflicts-with-file-from-package" class="header-anchor">#</a> 1. 解決rpm conflicts with file from package</h3> <ul><li>安裝的時候增加–replacefiles參數</li> <li><code>rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm --replacefiles</code></li></ul> <h3 id="_2-php点击查看函数声明"><a href="#_2-php点击查看函数声明" class="header-anchor">#</a> 2. php点击查看函数声明</h3> <ul><li><p>安装插件<code>php intelliSecse</code></p></li> <li><p>修改扩展设置
+找到插件<code>php intelliSecse</code>，点击该插件设置，选择【扩展设置】，点击配置文件setting，编辑 <code>php.executablePath</code> 选项，修改为php安装路径（Linux为 / usr/bin/php）</p></li></ul> <h3 id="_3-php点击查看函数声明失败"><a href="#_3-php点击查看函数声明失败" class="header-anchor">#</a> 3. php点击查看函数声明失败</h3> <ul><li>失败原因一般是PHP版本过低，<a href="https://www.jianshu.com/p/1e23aba0a164" target="_blank" rel="noopener noreferrer">安装php7<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>版本</li> <li>安装成功后更改php可执行文件没有在$PATH中</li> <li>运行<code>ln -s /usr/local/php/bin/php /usr/bin/php</code></li> <li>运行<code>php -v</code>查看是否成功</li></ul> <h3 id="_4-vscode免密码登录"><a href="#_4-vscode免密码登录" class="header-anchor">#</a> 4. vscode免密码登录</h3> <p>1）生成密钥文件</p> <p>2）上传本地密钥到服务器</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> ~/.ssh
+<span class="token function">cat</span> id_rsa.pub <span class="token operator">&gt;&gt;</span> authorized_keys
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>3） 配置打开密钥登录功能</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 打开SSH配置文件</span>
+<span class="token function">vim</span> /etc/ssh/sshd_config
+
+<span class="token comment"># 查看确认下面两项配置 默认不需要修改配置</span>
+RSAAuthentication <span class="token function">yes</span>
+PubkeyAuthentication <span class="token function">yes</span>
+
+<span class="token comment"># 当你完成全部设置，并以密钥方式登录成功后，再禁用密码登录</span>
+PasswordAuthentication no
+
+<span class="token comment"># 重启SSH</span>
+systemctl restart sshd
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>4）本机vscode配置</p> <div class="language-config line-numbers-mode"><pre class="language-text"><code>Host liam
+  HostName X.X.X.X
+  User root
+  Port XX
+  IdentityFile //Users/liam/.ssh/id_rsa
+
+Host liam
+  HostName X.X.X.X
+  User root
+  Port 22
+  IdentityFile //Users/liam/XX.pem
+
+Host liam
+  HostName X.X.X.X
+  User root
+  Port 22
+  IdentityFile /d/XX.pem
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">2/5/2022, 10:42:32 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/other/01-vscode插件.html" class="prev">
+        vscode插件
+      </a></span> <span class="next"><a href="/other/02-git.html">
+        git
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.56cd5ac4.js" defer></script><script src="/assets/js/2.cfb1ba91.js" defer></script><script src="/assets/js/30.8be5bca5.js" defer></script>
+  </body>
+</html>

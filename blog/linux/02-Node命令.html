@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Node命令</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/logo.png">
+    <meta name="description" content="Node命令">
+    <meta name="keywords" content="Node命令,HTTPS,前端,Node,Nginx">
+    <meta name="author" content="liam">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="preload" href="/assets/css/0.styles.f707576d.css" as="style"><link rel="preload" href="/assets/js/app.56cd5ac4.js" as="script"><link rel="preload" href="/assets/js/2.cfb1ba91.js" as="script"><link rel="preload" href="/assets/js/11.ed70a74b.js" as="script"><link rel="prefetch" href="/assets/js/10.2fce8ed4.js"><link rel="prefetch" href="/assets/js/12.d2311964.js"><link rel="prefetch" href="/assets/js/13.b135f199.js"><link rel="prefetch" href="/assets/js/14.8b082744.js"><link rel="prefetch" href="/assets/js/15.88d90214.js"><link rel="prefetch" href="/assets/js/16.29006f6e.js"><link rel="prefetch" href="/assets/js/17.4e67e84e.js"><link rel="prefetch" href="/assets/js/18.00da43f2.js"><link rel="prefetch" href="/assets/js/19.611f30c2.js"><link rel="prefetch" href="/assets/js/20.045a9abf.js"><link rel="prefetch" href="/assets/js/21.88511053.js"><link rel="prefetch" href="/assets/js/22.ef5ddb27.js"><link rel="prefetch" href="/assets/js/23.03b49b23.js"><link rel="prefetch" href="/assets/js/24.b9e518c3.js"><link rel="prefetch" href="/assets/js/25.c3bd9476.js"><link rel="prefetch" href="/assets/js/26.a3c2a9b7.js"><link rel="prefetch" href="/assets/js/27.793c5032.js"><link rel="prefetch" href="/assets/js/28.783b9967.js"><link rel="prefetch" href="/assets/js/29.93ffbe6e.js"><link rel="prefetch" href="/assets/js/3.bd64d155.js"><link rel="prefetch" href="/assets/js/30.8be5bca5.js"><link rel="prefetch" href="/assets/js/31.fc7c206d.js"><link rel="prefetch" href="/assets/js/32.39c8ecb0.js"><link rel="prefetch" href="/assets/js/33.8f743d81.js"><link rel="prefetch" href="/assets/js/34.5dacc676.js"><link rel="prefetch" href="/assets/js/35.46dc00d9.js"><link rel="prefetch" href="/assets/js/36.ced300b2.js"><link rel="prefetch" href="/assets/js/37.bb78bd96.js"><link rel="prefetch" href="/assets/js/38.35f1322f.js"><link rel="prefetch" href="/assets/js/39.772550ef.js"><link rel="prefetch" href="/assets/js/4.bd0ac780.js"><link rel="prefetch" href="/assets/js/40.c0444e10.js"><link rel="prefetch" href="/assets/js/41.ee1d6ce9.js"><link rel="prefetch" href="/assets/js/42.2cc5d9eb.js"><link rel="prefetch" href="/assets/js/43.52266420.js"><link rel="prefetch" href="/assets/js/44.0d706be4.js"><link rel="prefetch" href="/assets/js/45.d70ee8fc.js"><link rel="prefetch" href="/assets/js/46.3adf0186.js"><link rel="prefetch" href="/assets/js/47.7123aed4.js"><link rel="prefetch" href="/assets/js/48.95171c3e.js"><link rel="prefetch" href="/assets/js/49.eaaacbf8.js"><link rel="prefetch" href="/assets/js/5.b6df23a7.js"><link rel="prefetch" href="/assets/js/50.1f23e7cc.js"><link rel="prefetch" href="/assets/js/51.3efd8a4c.js"><link rel="prefetch" href="/assets/js/52.f4a17f81.js"><link rel="prefetch" href="/assets/js/53.7d3a116b.js"><link rel="prefetch" href="/assets/js/54.3c12b456.js"><link rel="prefetch" href="/assets/js/55.fab612dd.js"><link rel="prefetch" href="/assets/js/56.a52384fe.js"><link rel="prefetch" href="/assets/js/57.c2806e8f.js"><link rel="prefetch" href="/assets/js/58.5a0a9785.js"><link rel="prefetch" href="/assets/js/59.383f91a0.js"><link rel="prefetch" href="/assets/js/6.f13cddbb.js"><link rel="prefetch" href="/assets/js/60.3362efb4.js"><link rel="prefetch" href="/assets/js/61.5c8a06b3.js"><link rel="prefetch" href="/assets/js/62.e2d65126.js"><link rel="prefetch" href="/assets/js/63.71a2cd52.js"><link rel="prefetch" href="/assets/js/64.35c80339.js"><link rel="prefetch" href="/assets/js/65.5373137c.js"><link rel="prefetch" href="/assets/js/7.447f3437.js"><link rel="prefetch" href="/assets/js/8.9e318401.js"><link rel="prefetch" href="/assets/js/9.2f1ed0c9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f707576d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/header-logo.png" alt="" class="logo"> <!----></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><a href="/frame/" class="nav-link">
+  Frame
+</a></div><div class="nav-item"><a href="/network/" class="nav-link">
+  Network
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link router-link-active">
+  Linux
+</a></div><div class="nav-item"><a href="/other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/huoyuhao/myArticle" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><a href="/frame/" class="nav-link">
+  Frame
+</a></div><div class="nav-item"><a href="/network/" class="nav-link">
+  Network
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link router-link-active">
+  Linux
+</a></div><div class="nav-item"><a href="/other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/huoyuhao/myArticle" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/linux/00-Linux常用命令.html" class="sidebar-link">Linux常用命令</a></li><li><a href="/linux/00-博客.html" class="sidebar-link">博客</a></li><li><a href="/linux/01-升级服务器.html" class="sidebar-link">升级服务器</a></li><li><a href="/linux/02-Node命令.html" class="active sidebar-link">Node命令</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/linux/02-Node命令.html#node-npm安装" class="sidebar-link">Node &amp; Npm安装</a></li><li class="sidebar-sub-header"><a href="/linux/02-Node命令.html#用forever-进行管理" class="sidebar-link">用forever 进行管理</a></li><li class="sidebar-sub-header"><a href="/linux/02-Node命令.html#pm2进程管理" class="sidebar-link">PM2进程管理</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="node命令"><a href="#node命令" class="header-anchor">#</a> Node命令</h1> <h2 id="node-npm安装"><a href="#node-npm安装" class="header-anchor">#</a> Node &amp; Npm安装</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// 最新版本安装方法</span>
+sudo apt install nodejs<span class="token operator">-</span>legacy
+sudo apt install npm
+
+<span class="token comment">// 升级npm为最新版本</span>
+sudo npm install npm@latest <span class="token operator">-</span>g
+npm install npm@<span class="token number">4</span> <span class="token operator">-</span>g <span class="token comment">// 4是版本号</span>
+
+<span class="token comment">// 安装用于安装nodejs的模块n</span>
+sudo npm install <span class="token operator">-</span>g n sudo n latest <span class="token comment">// 安装官方最新版本</span>
+sudo n stable <span class="token comment">// 安装官方稳定版本</span>
+sudo n lts <span class="token comment">// 安装官方最新LTS版本</span>
+n <span class="token number">8.10</span><span class="token number">.0</span> <span class="token comment">// 安装8.10.0版本</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h2 id="用forever-进行管理"><a href="#用forever-进行管理" class="header-anchor">#</a> 用forever 进行管理</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code>npm install <span class="token operator">-</span>g forever
+forever start index<span class="token punctuation">.</span>js
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="pm2进程管理"><a href="#pm2进程管理" class="header-anchor">#</a> PM2进程管理</h2> <h3 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h3> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// 通过npm安装</span>
+npm install <span class="token operator">-</span>g pm2
+
+<span class="token comment">// 通过yarn安装</span>
+yarn global add pm2
+
+<span class="token comment">// 添加pm2命令自动完成功能</span>
+pm2 completion install
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><div class="custom-block danger"><p class="custom-block-title">WARNING</p> <p>安装完成后使用报错：
+/usr/lib/node_modules/pm2/node_modules/chalk/source/index.js:103
+...styles,
+^^^</p> <p>原因是pm2版本过高，因为我的nodejs才是v6.17.1版本，升级node即可</p></div> <h3 id="多进程管理"><a href="#多进程管理" class="header-anchor">#</a> 多进程管理</h3> <p>PM2自身帮你维护着一个进程列表，你可以很方便的对列表中的进程进行启动、重启和停止等操作。你的所有项目都会在底层运行，你可以通过命令行，也就是PM2 CLI工具和你的项目进行交互。</p> <p>通过 start 和 delete 命令将你的项目添加到进程列表里面</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// 将项目添加到进程列表，并启动该进程</span>
+pm2 start app<span class="token punctuation">.</span>js
+
+<span class="token comment">// 查看进程列表</span>
+pm2 ls
+
+<span class="token comment">// 从进程列表中删除指定名称的进程</span>
+pm2 <span class="token keyword">delete</span> app
+
+<span class="token comment">// 在start命令后面加上--name 或者-n参数来直接指定进程的名称</span>
+pm2 start app<span class="token punctuation">.</span>js <span class="token operator">--</span>name myApp
+
+<span class="token comment">// 停止该进程，但是依然会保留在进程列表里面</span>
+pm2 stop app
+
+<span class="token comment">// 启动该进程</span>
+pm2 start app
+
+<span class="token comment">// 重启该进程，即先运行了stop命令，然后再运行start命令</span>
+pm2 restart app
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">6/2/2020, 11:48:09 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/linux/01-升级服务器.html" class="prev">
+        升级服务器
+      </a></span> <!----></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.56cd5ac4.js" defer></script><script src="/assets/js/2.cfb1ba91.js" defer></script><script src="/assets/js/11.ed70a74b.js" defer></script>
+  </body>
+</html>

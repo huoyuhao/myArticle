@@ -820,6 +820,77 @@ Promise.race([runAsync(1), runAsync(2), runAsync(3)])
 
 ### 2.5 async/await
 
+```js
+async function async1 () {
+  console.log("async1 start");
+  await async2();
+  console.log("async1 end");
+  setTimeout(() => {
+    console.log('timer1')
+  }, 0)
+}
+async function async2 () {
+  setTimeout(() => {
+    console.log('timer2')
+  }, 0)
+  console.log("async2");
+}
+async1();
+setTimeout(() => {
+  console.log('timer3')
+}, 0)
+console.log("start")
+// async1 start => async2 => start => async1 end => timer2 => timer3 => timer1
+```
+
+```js
+async function async1 () {
+  await async2();
+  console.log('async1');
+  return 'async1 success'
+}
+async function async2 () {
+  return new Promise((resolve, reject) => {
+    console.log('async2')
+    reject('error')
+  })
+}
+async1().then(res => console.log(res));
+// 'async2'  => Uncaught (in promise) error
+// 如果在async函数中抛出了错误，则终止错误结果，不会继续向下执行
+```
+
+### 2.6 综合
+
+```js
+const async1 = async () => {
+  console.log('async1');
+  setTimeout(() => {
+    console.log('timer1')
+  }, 2000)
+  await new Promise(resolve => {
+    console.log('promise1')
+  })
+  console.log('async1 end')
+  return 'async1 success'
+} 
+console.log('script start');
+async1().then(res => console.log(res));
+console.log('script end');
+Promise.resolve(1)
+  .then(2)
+  .then(Promise.resolve(3))
+  .catch(4)
+  .then(res => console.log(res))
+setTimeout(() => {
+  console.log('timer2')
+}, 1000)
+// script start => async1 => promise1 => script end => 1 => timer2 => timer1
+// async函数中await的new Promise要是没有返回值的话则不执行后面的内容
+// .then函数中的参数期待的是函数，如果不是函数的话会发生透传
+// 注意定时器的延迟时间
+```
+
 ## 3. 参考文章
 
 [BAT前端经典面试问题：史上最最最详细的手写Promise教程](https://juejin.cn/post/6844903625769091079)
