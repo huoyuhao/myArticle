@@ -5,7 +5,7 @@ let http = require("http")
 let fs = require("fs")
 let server = http.createServer()
 
-const dirPath = "/data/myArticle/docs/"
+const dirPath = "/data/2_project/myArticle/docs/"
 const dirList = ['web', 'linux', 'network', 'other', 'frame']
 const reg = /(?<=[0-9]+\-)(.*)(?=\.md)/ig
 const regFile = /(?<=[0-9]+?\-)(.*)/ig
