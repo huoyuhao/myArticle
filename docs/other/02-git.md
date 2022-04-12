@@ -50,7 +50,8 @@ meta:
 ----|------
 `git add [file1] [file2] ...`  |  添加指定文件到暂存区
 `git add [dir]`      |  添加指定目录到暂存区，包括子目录
-`git add .`              |  添加当前目录的所有文件到暂存区
+`git add .`              |  添加 **当前目录** 的所有文件到暂存区
+`git add -A .`              |  将 **项目所有** 的已跟踪的文件的修改与删除和新增的未跟踪的文件都添加到暂存区
 
 ### 提交
 
@@ -83,6 +84,7 @@ meta:
 当我们使用git一段时间之后，想要使用一些git命令的简称，比如`st => status`，这时候我们学习如何进行个性化配置git命令。
 
 首先找到`git`的默认配置文件
+
 1. window文件路径`C:\Users\Administrator*\.gitconfig`
 2. linux/mac文件路径`~/.gitconfig`
 
