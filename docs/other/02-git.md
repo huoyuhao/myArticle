@@ -67,6 +67,13 @@ meta:
 `git pull`     |   拉取远程分支到本地
 `git push --set-upstream origin [branch-name]`  |        推送本地分支到远程仓库
 
+### 清空暂存
+
+命令|含义
+----|------
+`git checkout .`  |    清空暂存区已修改和删除文件，新建文件无法清空
+`git clean -d -f` |    删除当前目录下没有被跟踪的文件和文件夹（即新建文件/夹）
+
 ### 合并分支
 
 命令|含义
