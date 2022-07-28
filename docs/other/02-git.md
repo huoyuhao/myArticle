@@ -64,8 +64,13 @@ meta:
 
 命令|含义
 ----|------
+`git fetch [remote]`     |   下载远程仓库的所有变动
+`git fetch`    |   git fetch 获取线上最新版信息记录，不合并
 `git pull`     |   拉取远程分支到本地
 `git push --set-upstream origin [branch-name]`  |        推送本地分支到远程仓库
+
++ git pull是相当于从远程仓库获取最新版本，然后再与本地分支merge，即git pull = git fetch + git merge
++ 相比起来，git fetch 更安全也更符合实际要求，在 merge 前，我们可以查看更新情况，根据实际情况再决定是否合并
 
 ### 清空暂存
 
@@ -73,6 +78,15 @@ meta:
 ----|------
 `git checkout .`  |    清空暂存区已修改和删除文件，新建文件无法清空
 `git clean -d -f` |    删除当前目录下没有被跟踪的文件和文件夹（即新建文件/夹）
+`git stash`       |    把暂存区和工作区的改动保存起来
+`git stash save 'message...'` |    把暂存区和工作区的改动保存起来
+`git stash list`  |    显示保存进度的列表
+`git stash pop [–index] [stash_id]` |    取出储藏中最后存入的工作状态进行恢复，会删除储藏
+`git stash pop stash@{1}` |   恢复指定的进度到工作区
+`git stash show -p` |   查看堆栈中最新保存的stash和当前目录的差异
+`git stash show stash@{1} -p` |   查看堆栈中指定的stash和当前目录的差异
+`git stash apply [–index] [stash_id]` |   同git stash pop，不会删除储藏
+`git stash clear` |   删除所有存储的进度
 
 ### 合并分支
 
@@ -85,6 +99,15 @@ meta:
 + 合并分支或者每天开始工作之前先拉取一下，将分支更新到最新
 + 切换分支之前请先清空修改文件（可以删除/提交）
 + 不要中文文件名，文件名只能是字母数字减号下划线
+
+## git合作开发命令
+
+命令|含义
+----|------
+`git remote add upstream https://.....` | 设置upstream
+`git remote -v` | 查看
+`git fetch upstream` | 拉取
+`git rebase upstream/master` | 拉取远程master覆盖本地
 
 ## git个性化配置
 
