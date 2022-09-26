@@ -33,9 +33,7 @@ Cookie是存储在用户本地的，可持久化一段时间（可以自行设�
 | secure| 可选。规定是否通过安全的 HTTPS 连接来传输 cookie。 |
 | HttpOnly | 可选。规定无法通过 `JS 脚本` 读取到该 cookie 的信息，只有在http请求头中会带有此cookie的信息 |
 
-:::tip
 secure：安全设置，指明必须通过 安全的通信通道来传输（https) 才能获得 cookie，true 不安全，默认值；false 安全，必须通过 https 来访问。
-:::
 
 ## 同源
 
@@ -45,11 +43,9 @@ secure：安全设置，指明必须通过 安全的通信通道来传输（http
 
 比如`huoyuhao.com`能设置domain为`huoyuhao.com`或者`www.huoyuhao.com`，但不能设置domain为`blog.huoyuhao.com`，这样cookie不会生成。
 
-:::tip
 cookie不可跨域
 
 顶级域名设置的cookie可以共享【需要指定domain主域名的host】给二级域名，也可以自己私有【不指定domain】
-:::
 
 ### 二级域名
 

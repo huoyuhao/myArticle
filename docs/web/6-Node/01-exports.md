@@ -5,7 +5,7 @@ meta:
   - name: keywords
     content: require,import,module.exports,module,互相导入,exports,
 ---
-# import、require、export、module.export 区别
+# import、require、export、module.export 总结
 
 ## 1. CommonJS规范
 

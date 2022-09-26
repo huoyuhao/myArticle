@@ -47,14 +47,12 @@ yarn global add pm2
 pm2 completion install
 ```
 
-:::danger
 安装完成后使用报错：
 /usr/lib/node_modules/pm2/node_modules/chalk/source/index.js:103
   ...styles,
   ^^^
 
 原因是pm2版本过高，因为我的nodejs才是v6.17.1版本，升级node即可
-:::
 
 ### 多进程管理
 
