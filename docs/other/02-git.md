@@ -67,9 +67,9 @@ meta:
 
 命令|含义
 ----|------
-`git fetch [remote]`     |   下载远程仓库的所有变动
-`git fetch`    |   git fetch 获取线上最新版信息记录，不合并
-`git pull`     |   拉取远程分支到本地
+`git fetch [remote]`  |   下载远程仓库的所有变动
+`git fetch`           |   git fetch 获取线上最新版信息记录，不合并
+`git pull`            |   拉取远程分支到本地
 `git push --set-upstream origin [branch-name]`  |        推送本地分支到远程仓库
 
 + git pull是相当于从远程仓库获取最新版本，然后再与本地分支merge，即git pull = git fetch + git merge
@@ -97,7 +97,23 @@ meta:
 ----|------
 `git merge [branch-name]`  |     合并分支到当前分支
 
-### 1.10 配置config
+### 1.10 撤销
+
+命令|含义
+----|------
+`git checkout [file]`           |     恢复暂存区的指定文件到工作区
+`git checkout [commit] [file]`  |     恢复某个commit的指定文件到暂存区和工作区
+`git checkout .`                |     恢复暂存区的所有文件到工作区
+`git reset [commit]`            |     重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变
+`git reset --hard`              |     重置暂存区与工作区，与上一次commit保持一致
+`git reset [file]`              |     重置暂存区的指定文件，与上一次commit保持一致，但工作区不变
+`git revert [commit]`           |     后者的所有变化都将被前者抵消，并且应用到当前分支
+
+reset：真实硬性回滚，目标版本后面的提交记录全部丢失了
+
+revert：同样回滚，这个回滚操作相当于一个提价，目标版本后面的提交记录也全部都有
+
+### 1.11 配置config
 
 '设置提交代码时的用户信息命令如下：
 
@@ -106,7 +122,7 @@ meta:
 `git config [--global] user.name "[name]"`  | 设置提交用户名
 `git config [--global] user.email "[email address]"`  | 设置提交用户邮箱
 
-### 1.11 注意事项
+### 1.12 注意事项
 
 + 合并分支或者每天开始工作之前先拉取一下，将分支更新到最新
 + 切换分支之前请先清空修改文件（可以删除/提交）
@@ -176,3 +192,7 @@ meta:
 
 其中`alias`里面的内容都是`git`命令的缩写
 `difftool`和`mergetool`是使用`BCompare`软件显示文件差异以及解决合并冲突
+
+## 4. 参考文献
+
+[说说你对git rebase 和 git merge的理解？区别](https://github.com/febobo/web-interview/issues/228)
