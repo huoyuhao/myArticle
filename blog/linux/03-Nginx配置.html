@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>NGINX配置</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/logo.png">
+    <meta name="description" content="NGINX配置">
+    <meta name="keywords" content="NGINX配置,NGINX,前端,alias,root,Nginx">
+    <meta name="author" content="liam">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="preload" href="/assets/css/0.styles.f707576d.css" as="style"><link rel="preload" href="/assets/js/app.76936a95.js" as="script"><link rel="preload" href="/assets/js/2.cfb1ba91.js" as="script"><link rel="preload" href="/assets/js/12.366ef5ef.js" as="script"><link rel="prefetch" href="/assets/js/10.4653acc3.js"><link rel="prefetch" href="/assets/js/11.be92f739.js"><link rel="prefetch" href="/assets/js/13.96ad59b4.js"><link rel="prefetch" href="/assets/js/14.14aa169b.js"><link rel="prefetch" href="/assets/js/15.139be24c.js"><link rel="prefetch" href="/assets/js/16.f17e8d8f.js"><link rel="prefetch" href="/assets/js/17.3bcdeb02.js"><link rel="prefetch" href="/assets/js/18.5f449237.js"><link rel="prefetch" href="/assets/js/19.ffb3df9c.js"><link rel="prefetch" href="/assets/js/20.8df82486.js"><link rel="prefetch" href="/assets/js/21.c5e36f75.js"><link rel="prefetch" href="/assets/js/22.c88a38ec.js"><link rel="prefetch" href="/assets/js/23.a68d4e6f.js"><link rel="prefetch" href="/assets/js/24.7f4b7c92.js"><link rel="prefetch" href="/assets/js/25.fe9825f2.js"><link rel="prefetch" href="/assets/js/26.c895d4fb.js"><link rel="prefetch" href="/assets/js/27.ba7eb5d6.js"><link rel="prefetch" href="/assets/js/28.495542fd.js"><link rel="prefetch" href="/assets/js/29.5bcd5cb1.js"><link rel="prefetch" href="/assets/js/3.85bfe3d7.js"><link rel="prefetch" href="/assets/js/30.81fd2d5c.js"><link rel="prefetch" href="/assets/js/31.7618d52a.js"><link rel="prefetch" href="/assets/js/32.dd40b166.js"><link rel="prefetch" href="/assets/js/33.86f5b939.js"><link rel="prefetch" href="/assets/js/34.2c3c3e66.js"><link rel="prefetch" href="/assets/js/35.792302c3.js"><link rel="prefetch" href="/assets/js/36.af434f35.js"><link rel="prefetch" href="/assets/js/37.cd4125bf.js"><link rel="prefetch" href="/assets/js/38.4bbdfc2a.js"><link rel="prefetch" href="/assets/js/39.4ec672cd.js"><link rel="prefetch" href="/assets/js/4.bd0ac780.js"><link rel="prefetch" href="/assets/js/40.6104256b.js"><link rel="prefetch" href="/assets/js/41.f9d63419.js"><link rel="prefetch" href="/assets/js/42.bd46a461.js"><link rel="prefetch" href="/assets/js/43.b2e5ab1d.js"><link rel="prefetch" href="/assets/js/44.1422d856.js"><link rel="prefetch" href="/assets/js/45.17716bdf.js"><link rel="prefetch" href="/assets/js/46.5a8c7673.js"><link rel="prefetch" href="/assets/js/47.4a7664ed.js"><link rel="prefetch" href="/assets/js/48.c809aa27.js"><link rel="prefetch" href="/assets/js/49.222fe226.js"><link rel="prefetch" href="/assets/js/5.b6df23a7.js"><link rel="prefetch" href="/assets/js/50.af1bf195.js"><link rel="prefetch" href="/assets/js/51.02125055.js"><link rel="prefetch" href="/assets/js/52.3c606cdb.js"><link rel="prefetch" href="/assets/js/53.437c0e04.js"><link rel="prefetch" href="/assets/js/54.879ee566.js"><link rel="prefetch" href="/assets/js/55.b931f0de.js"><link rel="prefetch" href="/assets/js/56.48e7f4aa.js"><link rel="prefetch" href="/assets/js/57.0cc01da0.js"><link rel="prefetch" href="/assets/js/58.83b6fdd1.js"><link rel="prefetch" href="/assets/js/59.dad8bbb7.js"><link rel="prefetch" href="/assets/js/6.a9839fc4.js"><link rel="prefetch" href="/assets/js/60.ca515401.js"><link rel="prefetch" href="/assets/js/61.5c8a06b3.js"><link rel="prefetch" href="/assets/js/62.a98bf649.js"><link rel="prefetch" href="/assets/js/63.71a2cd52.js"><link rel="prefetch" href="/assets/js/64.35c80339.js"><link rel="prefetch" href="/assets/js/65.8d45f482.js"><link rel="prefetch" href="/assets/js/66.e7ac0734.js"><link rel="prefetch" href="/assets/js/7.77ac725b.js"><link rel="prefetch" href="/assets/js/8.9e318401.js"><link rel="prefetch" href="/assets/js/9.f423a0b4.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f707576d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/header-logo.png" alt="" class="logo"> <!----></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><a href="/frame/" class="nav-link">
+  Frame
+</a></div><div class="nav-item"><a href="/network/" class="nav-link">
+  Network
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link router-link-active">
+  Linux
+</a></div><div class="nav-item"><a href="/other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/huoyuhao/myArticle" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><a href="/frame/" class="nav-link">
+  Frame
+</a></div><div class="nav-item"><a href="/network/" class="nav-link">
+  Network
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link router-link-active">
+  Linux
+</a></div><div class="nav-item"><a href="/other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="https://github.com/huoyuhao/myArticle" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/linux/00-Linux常用命令.html" class="sidebar-link">Linux常用命令</a></li><li><a href="/linux/00-博客.html" class="sidebar-link">博客</a></li><li><a href="/linux/01-升级服务器.html" class="sidebar-link">升级服务器</a></li><li><a href="/linux/02-Node命令.html" class="sidebar-link">Node命令</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="nginx配置"><a href="#nginx配置" class="header-anchor">#</a> NGINX配置</h1> <h2 id="_1-基础特点"><a href="#_1-基础特点" class="header-anchor">#</a> 1. 基础特点</h2> <ul><li>Nginx 专为性能优化而开发。
+<ul><li>性能是其最重要的考量,实现上非常注重效率 。它支持内核 Poll 模型，能经受高负载的考验,有报告表明能支持高达 50,000 个并发连接数。</li></ul></li> <li>Nginx 具有很高的稳定性。
+<ul><li>其它 HTTP 服务器，当遇到访问的峰值，或者有人恶意发起慢速连接时，很可能会导致服务器物理内存耗尽频繁交换，失去响应，只能重启服务器。例如当前 apache 一旦上到 200 个进程以上，web响应速度就明显非常缓慢了。而 Nginx 采取了分阶段资源分配技术，使得它的 CPU 与内存占用率非常低。</li> <li>Nginx 官方表示在保持 10,000 个无活动连接时，它只占 2.5M 内存，所以类似 DOS 这样的攻击对 Nginx 来说基本上是毫无用处的。就稳定性而言，Nginx 比 lighthttpd 更胜一筹。</li></ul></li> <li>Nginx 支持热部署。
+<ul><li>它的启动特别容易, 并且几乎可以做到 7*24 不间断运行，即使运行数个月也不需要重新启动。</li> <li>你还能够在不间断服务的情况下，对软件版本进行升级。</li></ul></li></ul> <h2 id="_2-常用命令"><a href="#_2-常用命令" class="header-anchor">#</a> 2. 常用命令</h2> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token comment"># nginx配置文件位置</span>
+<span class="token builtin class-name">cd</span> /etc/nginx/conf.d
+
+<span class="token comment"># nginx的启动</span>
+systemctl start nginx
+<span class="token comment"># 热加载，重新加载配置文件</span>
+nginx -s reload
+
+<span class="token comment"># 测试nginx是否正常</span>
+nginx –t
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h2 id="_3-配置"><a href="#_3-配置" class="header-anchor">#</a> 3. 配置</h2> <h3 id="_3-1-配置示例"><a href="#_3-1-配置示例" class="header-anchor">#</a> 3.1 配置示例</h3> <div class="language-config line-numbers-mode"><pre class="language-text"><code>#指令名 指令值;  #全局块，主要设置Nginx服务器整体运行的配置指令
+worker_processes  1;
+
+#events块,主要设置,Nginx服务器与用户的网络连接,这一部分对Nginx服务器的性能影响较大
+events {
+    worker_connections  1024;
+}
+
+#http块，是Nginx服务器配置中的重要部分，代理、缓存、日志记录、第三方模块配置...  
+http {
+
+  #指令名 指令值;
+  include       mime.types;
+  default_type  application/octet-stream;
+  sendfile        on;
+  keepalive_timeout  65;
+
+  #server块，是Nginx配置和虚拟主机相关的内容
+  server {
+    listen       80;
+    server_name  localhost;
+    
+    #location块，基于Nginx服务器接收请求字符串与location后面的值进行匹配，对特定请求进行处理
+    location / {
+      #指令名 指令值;
+      root   html;
+      index  index.html index.htm;
+    }
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+      root   html;
+    }
+  }
+
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div><p>nginx.conf配置文件中默认有三大块：全局块、events块、http块</p> <p>http块中可以配置多个server块，每个server块又可以配置多个location块</p> <h3 id="_3-2-全局块"><a href="#_3-2-全局块" class="header-anchor">#</a> 3.2 全局块</h3> <p>全局块是默认配置文件从开始到events块之间的一部分内容，主要设置一些影响Nginx服务器整体运行的配置指令，因此，这些指令的作用域是Nginx服务器全局。</p> <p>通常包括配置运行Nginx服务器的用户（组）、允许生成的worker process数、Nginx进程PID存放路径、日志的存放路径和类型以及配置文件引入等</p> <h3 id="_3-3-events块"><a href="#_3-3-events块" class="header-anchor">#</a> 3.3 events块</h3> <p>events块涉及的指令主要影响Nginx服务器与用户的网络连接。常用到的设置包括是否开启对多worker process下的网络连接进行序列化，是否允许同时接收多个网络连接，选取哪种事件驱动模型处理连接请求，每个worker process可以同时支持的最大连接数等。</p> <p>这一部分的指令对Nginx服务器的性能影响较大，在实际配置中应该根据实际情况灵活调整</p> <h3 id="_3-4-http块"><a href="#_3-4-http块" class="header-anchor">#</a> 3.4 http块</h3> <p>http块是Nginx服务器配置中的重要部分，代理、缓存和日志定义等绝大多数的功能和第三方模块的配置都可以放在这个模块中。</p> <p>前面已经提到，http块中可以包含自己的全局块，也可以包含server块，server块中又可以进一步包含location块，在本书中我们使用“http全局块”来表示http中自己的全局块，即http块中不包含在server块中的部分。</p> <p>可以在http全局块中配置的指令包括文件引入、MIME-Type定义、日志自定义、是否使用sendfile传输文件、连接超时时间、单连接请求数上限等。</p> <h3 id="_3-5-server块"><a href="#_3-5-server块" class="header-anchor">#</a> 3.5 server块</h3> <p>server块和“虚拟主机”的概念有密切联系。</p> <p>虚拟主机，又称虚拟服务器、主机空间或是网页空间，它是一种技术。该技术是为了节省互联网服务器硬件成本而出现的。这里的“主机”或“空间”是由实体的服务器延伸而来，硬件系统可以基于服务器群，或者单个服务器等。虚拟主机技术主要应用于HTTP、FTP及EMAIL等多项服务，将一台服务器的某项或者全部服务内容逻辑划分为多个服务单位，对外表现为多个服务器，从而充分利用服务器硬件资源。从用户角度来看，一台虚拟主机和一台独立的硬件主机是完全一样的。</p> <p>在使用Nginx服务器提供Web服务时，利用虚拟主机的技术就可以避免为每一个要运行的网站提供单独的Nginx服务器，也无需为每个网站对应运行一组Nginx进程。虚拟主机技术使得Nginx服务器可以在同一台服务器上只运行一组Nginx进程，就可以运行多个网站。</p> <p>在前面提到过，每一个http块都可以包含多个server块，而每个server块就相当于一台虚拟主机，它内部可有多台主机联合提供服务，一起对外提供在逻辑上关系密切的一组服务（或网站）。</p> <p>和http块相同，server块也可以包含自己的全局块，同时可以包含多个location块。在server全局块中，最常见的两个配置项是本虚拟主机的监听配置和本虚拟主机的名称或IP配置。</p> <div class="language-config line-numbers-mode"><pre class="language-text"><code>server {
+  listen              443 ssl http2;
+  listen              [::]:443 ssl http2;
+  server_name         domain.com *.domain.com;
+  root                /var/www/domain/dist;
+  # SSL
+  ssl_certificate     /etc/nginx/ssl/domain.com.pem;
+  ssl_certificate_key /etc/nginx/ssl/domain.com.key;
+  # security
+  include             sites-available/security.conf;
+  # index.html fallback
+  location / {
+    try_files $uri $uri/ /index.html;
+  }
+  # reverse proxy
+  location /api/ {
+    proxy_pass http://127.0.0.1:8080/;
+    include    sites-available/proxy.conf;
+  }
+  # allow safe files
+  location ~* \.(?:css(\.map)?|js(\.map)?|ttf|ttc|otf|eot|woff2?|svgz?|jpe?g|png|gif|ico|cur|heic|webp|tiff?|mp3|m4a|aac|ogg|midi?|wav|mp4|mov|webm|mpe?g|avi|ogv|flv|wmv|pdf|docx?|dotx?|docm|dotm|xlsx?|xltx?|xlsm|xltm|pptx?|potx?|pptm|potm|ppsx?)$ {
+    add_header Access-Control-Allow-Origin &quot;*&quot;;
+    add_header Cache-Control &quot;public&quot;;
+    expires    30d;
+  }
+  # additional config
+  include sites-available/general.conf;
+}
+# HTTP redirect
+server {
+  listen      80;
+  listen      [::]:80;
+  server_name .domain.com;
+  return      301 https://domain.com$request_uri;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div><div class="language-config line-numbers-mode"><pre class="language-text"><code># gzip
+gzip            on;
+gzip_vary       on;
+gzip_proxied    any;
+gzip_comp_level 6;
+gzip_types      text/plain text/css text/xml application/json application/javascript application/rss+xml application/atom+xml image/svg+xml;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="_3-6-location配置"><a href="#_3-6-location配置" class="header-anchor">#</a> 3.6 location配置</h3> <h4 id="_3-6-1-location-配置"><a href="#_3-6-1-location-配置" class="header-anchor">#</a> 3.6.1 location 配置</h4> <div class="language-config line-numbers-mode"><pre class="language-text"><code>location [ = | ~ | ~* | ^~ ] uri { ... }
+location @name { ... }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>修饰符匹配优先级从高到低依次为</p> <ul><li><code>location =</code> 表示精确匹配。只有请求的url路径与后面的字符串完全相等时，才会命中。如果已经匹配成功，就停止继续向下搜索并立即处理此请求</li> <li><code>location ^~</code> 表示如果该符号后面的字符是最佳匹配，采用该规则，不再进行后续的查找</li> <li><code>location ~</code> 表示该规则是使用正则定义的，区分大小写</li> <li><code>location ~*</code> 表示该规则是使用正则定义的，不区分大小写</li> <li><code>location /a</code> 普通前缀匹配，优先级低于带参数前缀匹配</li> <li><code>location /</code> 任何没有匹配成功的，都会匹配这里处理</li></ul> <p>注意：在浏览器传送URI时对一部分字符进行URL编码，比如空格被编码为<code>%20</code>，问号被编码为<code>%3f</code>等。<code>～</code>有一个特点是，它对uri中的这些符号将会进行编码处理。比如，如果location块收到的URI为<code>/html/%20/data</code>，则当Nginx服务器搜索到配置为<code>～ /html/ /data</code>的location时，可以匹配成功</p> <h4 id="_3-6-2-location-案例分析"><a href="#_3-6-2-location-案例分析" class="header-anchor">#</a> 3.6.2 location 案例分析</h4> <div class="language-conf line-numbers-mode"><pre class="language-text"><code>server {
+  server_name liam.com;
+  location ^~ /document {
+      return 701; # 用这样的方式，可以方便的知道请求到了哪里
+  }
+  location /doc {
+    return 702;
+  }
+  location ~* ^/doc$ {
+    return 703; 
+  }
+
+  location /use {
+    return 704;
+  }
+  location /user {
+    return 705;
+  }
+
+  location ~ ^/tes[a-z]+ {
+    return 706;
+  }
+  location ~ ^/te[a-z]+ {
+    return 707;
+  }
+
+  location ~ ^/ima[a-z]+ {
+    return 708;
+  }
+
+  location ~ ^/image[a-z]+ {
+    return 709;
+  }
+}
+# 修改本机hosts文件 127.0.0.1 liam.com
+# curl -I liam.com/document 查看返回码，可以方便的知道请求到了哪里
+liam.com/document 701 ^~ 命中以后不会再搜寻正则匹配
+liam.com/doc 703 ^~ 按照上述的规则，显然第三个正则匹配会有更高的优先级
+liam.com/userName 705 前缀匹配下，返回最长匹配的 location，与 location 所在位置顺序无关
+liam.com/test 706 
+liam.com/images 708 正则匹配是使用文件中的顺序，先匹配成功的返回
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br></div></div><h4 id="_3-6-3-location-uri结尾带不带"><a href="#_3-6-3-location-uri结尾带不带" class="header-anchor">#</a> 3.6.3 location URI结尾带不带 /</h4> <p>关于 URI 尾部的 / 有三点也需要说明一下。第一点与 location 配置有关，其他两点无关。</p> <ul><li>location 中的字符有没有 / 都没有影响。也就是说 /user/ 和 /user 是一样的。</li> <li>如果 URI 结构是 <code>https://liam.com/</code> 的形式，尾部有没有 / 都不会造成重定向。因为浏览器在发起请求的时候，默认加上了 / 。虽然很多浏览器在地址栏里也不会显示 / 。这一点，可以访问baidu验证一下。
+如果 URI 的结构是 <code>https://liam.com/some-dir/</code> 。尾部如果缺少 / 将导致重定向。因为根据约定，URL 尾部的 / 表示目录，没有 / 表示文件。所以访问 <code>/some-dir/</code> 时，服务器会自动去该目录下找对应的默认文件。如果访问 <code>/some-dir</code> 的话，服务器会先去找 <code>some-dir</code> 文件，找不到的话会将 <code>some-dir</code> 当成目录，重定向到 <code>/some-dir/</code>，去该目录下找默认文件。可以去测试一下你的网站是不是这样的</li></ul> <h4 id="_3-6-4-location-name的用法"><a href="#_3-6-4-location-name的用法" class="header-anchor">#</a> 3.6.4 location @name的用法</h4> <p>@用来定义一个命名location。主要用于内部重定向，不能用来处理正常的请求。其用法如下</p> <div class="language-conf line-numbers-mode"><pre class="language-text"><code>location / {
+  try_files $uri $uri/ @custom
+}
+location @custom {
+  # ...do something
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="_3-7-虚拟目录alias和root"><a href="#_3-7-虚拟目录alias和root" class="header-anchor">#</a> 3.7 虚拟目录alias和root</h3> <ul><li><code>alias</code>指定的目录是准确的，即location匹配访问的path目录下的文件直接是在alias目录下查找的；</li> <li><code>root</code>指定的目录是location匹配访问的path目录的上一级目录，这个path目录一定要是真实存在root指定目录下的；</li></ul> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># /data 目录</span>
+<span class="token operator">|</span>--img
+   <span class="token operator">|</span>--logo.png
+   <span class="token operator">|</span>--header.png
+<span class="token operator">|</span>--images
+   <span class="token operator">|</span>--banner.png
+   <span class="token operator">|</span>--index.png
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><div class="language-config line-numbers-mode"><pre class="language-text"><code>location /test/ {
+  alias /data/images/;
+}
+# http://XXX.com/test/banner.png 访问成功
+# alias虚拟目录配置中，location匹配的path目录如果后面不带&quot;/&quot;，那么访问的url地址中这个path目录后面加不加&quot;/&quot;不影响访问，访问时它会自动加上&quot;/&quot;；
+# 但是如果location匹配的path目录后面加上&quot;/&quot;，那么访问的url地址中这个path目录必须要加上&quot;/&quot;，访问时它不会自动加上&quot;/&quot;。如果不加上&quot;/&quot;，访问就会失败！
+# 即 /test/ alias /data/images 会导致访问失败
+
+location ~ ^/im[a-z]+/ {
+  root /data/;
+}
+# http://XXX.com/images/banner.png 访问成功
+# http://dev.doppler.oa.com/img/logo.png 访问成功
+# root目录配置中，location匹配的path目录后面带不带&quot;/&quot;，都不会影响访问。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">9/13/2022, 3:54:18 PM</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.76936a95.js" defer></script><script src="/assets/js/2.cfb1ba91.js" defer></script><script src="/assets/js/12.366ef5ef.js" defer></script>
+  </body>
+</html>
