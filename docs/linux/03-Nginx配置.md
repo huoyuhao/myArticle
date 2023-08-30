@@ -273,6 +273,6 @@ location ~ ^/im[a-z]+/ {
   root /data/;
 }
 # http://XXX.com/images/banner.png 访问成功
-# http://dev.doppler.oa.com/img/logo.png 访问成功
+# http://XXX.com/img/logo.png 访问成功
 # root目录配置中，location匹配的path目录后面带不带"/"，都不会影响访问。
 ```

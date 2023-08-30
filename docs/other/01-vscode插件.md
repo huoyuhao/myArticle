@@ -64,9 +64,6 @@ HTML5、CSS3、SVG 的浏览器兼容性检查
 单词拼写检查，会自动检查单词拼写错误
 选中单词右键点击【Add Word to User Dictionary】可以把自创单词加入字典中
 
-### Codelf
-
-变量命名神器
 
 ### Color Highlight
 
@@ -100,12 +97,16 @@ EditorConfig 插件
 
 Git Blame 在状态栏显示当前行的 Git 信息
 Git History(git log) 查看 git log
-GitLens 显示文件最近的 commit 和作者，显示当前行 commit 信息
+GitLens 显示文件最近的 commit 和作者，显示当前行 commit 信息 - GitLens — Git supercharged
 
 ### Guides
 
 高亮缩进基准线
 与内置的缩进参考线不同，Guides 能够让你通过配置项来修改参考线的颜色、样式、缩进空白的背景色等，如果你愿意折腾，甚至能够配置出类似 Indent Rainbow 那样风格的参考线。
+
+### Helium Icon Theme
+
+不同类型文件显示不同icon
 
 ### HTML CSS Support
 
@@ -123,11 +124,18 @@ HTML 格式提示
 
 ### IntelliSense for css class names css class
 
-输入提示
+css - class输入提示
 
 ### JavaScript (ES6) code snippets
 
 ES6 TypeScript 语法代码段
+imp→	imports entire module import fs from 'fs';
+imd→	imports only a portion of the module using destructing import {rename} from 'fs';
+env→	exports name variable export const nameVariable = localVariable;
+fre→	forEach loop in ES6 syntax array.forEach(currentItem => {})
+prom→	creates a new Promise return new Promise((resolve, reject) => {});
+thenc→	adds then and catch declaration to a promise .then((res) => {}).catch((err) => {});
+clo→	console log object with name console.log('object :>> ', object);
 
 ### JavaScript Standard Style
 
@@ -181,7 +189,7 @@ css 排序
 
 发送 REST 风格的 HTTP 请求
 
-### Sass
+d### Sass
 
 sass 插件
 
@@ -205,9 +213,9 @@ typescript 的 import 排序
 
 设置同步到 gist
 
-### TODO Parser
+### Todo Tree
 
-Todo 管理
+TODO 管理
 
 ### TS/JS postfix completion
 
@@ -292,10 +300,6 @@ css/sass/less 代码风格
 ### vscode-database
 
 操作数据库，支持 mysql 和 postgres
-
-### vscode-icons
-
-文件图标，方便定位文件
 
 ### vscode-random
 
