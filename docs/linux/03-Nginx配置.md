@@ -230,7 +230,7 @@ liam.com/images 708 正则匹配是使用文件中的顺序，先匹配成功的
 
 + location 中的字符有没有 / 都没有影响。也就是说 /user/ 和 /user 是一样的。
 + 如果 URI 结构是 `https://liam.com/` 的形式，尾部有没有 / 都不会造成重定向。因为浏览器在发起请求的时候，默认加上了 / 。虽然很多浏览器在地址栏里也不会显示 / 。这一点，可以访问baidu验证一下。
-如果 URI 的结构是 `https://liam.com/some-dir/` 。尾部如果缺少 / 将导致重定向。因为根据约定，URL 尾部的 / 表示目录，没有 / 表示文件。所以访问 `/some-dir/` 时，服务器会自动去该目录下找对应的默认文件。如果访问 `/some-dir` 的话，服务器会先去找 `some-dir` 文件，找不到的话会将 `some-dir` 当成目录，重定向到 `/some-dir/ `，去该目录下找默认文件。可以去测试一下你的网站是不是这样的
+如果 URI 的结构是 `https://liam.com/some-dir/` 。尾部如果缺少 / 将导致重定向。因为根据约定，URL 尾部的 / 表示目录，没有 / 表示文件。所以访问 `/some-dir/` 时，服务器会自动去该目录下找对应的默认文件。如果访问 `/some-dir` 的话，服务器会先去找 `some-dir` 文件，找不到的话会将 `some-dir` 当成目录，重定向到 `/some-dir/ `，去该目录下找默认文件。
 
 #### 3.6.4 location @name的用法
 
@@ -276,3 +276,40 @@ location ~ ^/im[a-z]+/ {
 # http://XXX.com/img/logo.png 访问成功
 # root目录配置中，location匹配的path目录后面带不带"/"，都不会影响访问。
 ```
+
+### 3.8 端口转发
+
+```config
+server{
+  listen 80;
+  server_name  liam.com;
+  index  index.php index.html index.htm;
+
+  location / {
+    proxy_pass  http://liamhuo.com:8080;
+
+    # 保留代理之前的host 包含客户端真实的域名和端口号
+    proxy_set_header Host $proxy_host;
+
+    # 保留代理之前的真实客户端ip
+    proxy_set_header X-Real-IP $remote_addr;
+    
+    # 这个Header和X-Real-IP类似，但它在多级代理时会包含真实客户端及中间每个代理服务器的IP
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    # 表示客户端真实的协议（http还是https）
+    proxy_set_header X-Forwarded-Proto $scheme;
+  }
+  location /data/ {
+    proxy_pass  http://liamhuo.com/;
+  }
+  location /user/ {
+    proxy_pass  http://liamhuo.com;
+  }
+  # 在配置proxy_pass代理转发时，如果后面的url加/，表示绝对根路径；如果没有/，表示相对路径
+  # liam.com/data/index.html => liamhuo.com/index.html
+  # liam.com/user/index.html => liamhuo.com/user/index.html
+}
+```
+
+

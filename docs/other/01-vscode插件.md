@@ -189,7 +189,7 @@ css 排序
 
 发送 REST 风格的 HTTP 请求
 
-d### Sass
+### Sass
 
 sass 插件
 
@@ -300,6 +300,10 @@ css/sass/less 代码风格
 ### vscode-database
 
 操作数据库，支持 mysql 和 postgres
+
+### vscode-icons
+
+文件图标，方便定位文件
 
 ### vscode-random
 
