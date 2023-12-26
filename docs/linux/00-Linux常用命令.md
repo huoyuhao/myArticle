@@ -45,19 +45,43 @@ systemctl disable firewalld.service
 firewall-cmd --state
 ```
 
+## MySQL
+
+```linux
+# 链接数据库
+mysql -umysql -h9.134.32.65 -p
+use oss;
+show tables;
+
+```
+
 ## Others
 
-```js
-ls -a   // 显示所有文件
-ctrl+c  // 退出当前模式
-rm -rf  // 删除当前目录下的所有文件 比较危险 无法恢复
-sudo -s // 切换到root用户
-df -hl  // df命令是linux系统以磁盘分区为单位查看文件系统，可以加上参数查看磁盘剩余空间信息
-kill 00 // 关闭nginx或者响应进程
-sudo chmod -R 777 www // 更改www目录权限
-netstat -tpln         // 查看项目端口
-kill -9 2238 // 杀死进程PID为2238的进程
-sudo passwd root      // 设置root密码
-chkconfig --list      //查看开机启动服务列表
-telnet 127.0.0.1 80 // 测试ip端口连通性
+```shell
+ls -a   # 显示所有文件
+ctrl+c  # 退出当前模式
+rm -rf  # 删除当前目录下的所有文件 比较危险 无法恢复
+sudo -s # 切换到root用户
+df -hl  # df命令是linux系统以磁盘分区为单位查看文件系统，可以加上参数查看磁盘剩余空间信息
+kill 00 # 关闭nginx或者响应进程
+sudo chmod -R 777 www # 更改www目录权限
+netstat -tpln         # 查看项目端口
+kill -9 2238 # 杀死进程PID为2238的进程
+sudo passwd root      # 设置root密码
+chkconfig --list      #查看开机启动服务列表
+telnet 127.0.0.1 80 # 测试ip端口连通性
+killport 3000 # 删除端口占用
+lsof -i:端口号 # 展示所有端口
+
+# grep
+grep -A1 '060d2b1dd41f4ad38d271e4fa991163f' ./root.log
+# 匹配文件中 同一行包含 word1、word2、word3 之一
+grep -E "word1|word2|word3" ./xxx.log
+
+# 过滤文件名
+find ./* -type f -name "*.log" | grep keyword
+# 查找文件包含字段的内容
+find . -type f | xargs grep keyword
+
+# tailf 日志名 查看日志
 ```

@@ -63,36 +63,10 @@ Chrome 浏览器关闭HSTS操作。地址栏中输入 chrome://net-internals/#hs
 
 ## 网站优化
 
-+ dns预解析
-+ 通过正确设置响应头来缓存JavaScript文件
-+ 合并文件（减少http请求），将script标签放在body尾部（减少页面css，html的下载阻塞，减少界面的空白时间（浏览器在解析到script标签之前，不会渲染页面的任何部分））
-+ 可通过CSS Sprite（又称CSS雪碧）—将多个图片整合到一个图片中
-+ Minify把CSS和JS压缩和削减(Minify：去掉空格回车符等)
-+ 按需加载：将不影响首屏的资源和当前屏幕资源不用的资源放到用户需要时才加载，可以大大提升重要资源的显示速度和降低总体流量
-+ defer和async属性：都是并行下载，下载过程不阻塞，区别在于执行时机，async是下载完成后立即执行；defer是等页面加载完成后再执行。defer仅当src属性声明时才生效（HTML5的规范）
-+ 控制 JavaScript 包的大小，面向移动设备时尤其要注意。较小的包可提升下载速度、降低内存使用率并减少 CPU 开销
-+ 不要只做一个大包；如果你的包大小超过 50-100kB，就把它拆分成几个小包。（通过 HTTP/2 多路复用可以同时传输多个请求和响应消息，从而减少额外请求的开销。）
-+ 通过正确设置响应头来缓存JavaScript文件
-+ 减少重绘和重排： 在修改样式的过程中，最好避免使用下面的属性,因为它们会刷新渲染队列，尽量少查询下列属性
-+ 合并多次对DOM和样式的修改
 + cookie http-only
-+ 使用for循环
-+ 若我们要访问最外层的变量（全局变量），则相比直接访问内部的变量而言，会带来比较大的性能损耗。因此，我们可以将经常使用的全局变量引用储存在一个局部变量里
-+ 避免使用with，try-catch，eval等动态作用域语句
-+ 使用事件委托来减少事件处理器的数量
-+ 把递归算法改用迭代算法实现是避免调用栈溢出错误的解决方法之一
-+ 免重复性工作，手动实现缓存（Vue源码中就有很多缓存）
-+ 避免使用闭包
-+ 使用http2
 + 服务器PWA service worker
-+ Web Worker
 + WebAssembly
-+ 服务器渲染
-+ 图片懒加载
-+ 骨架屏
 + HTTP3
-
-+ [performance](https://javascript.ruanyifeng.com/bom/history.html#)
 + history
 + websocket
-+ AJAX
++ [performance](https://javascript.ruanyifeng.com/bom/history.html#)

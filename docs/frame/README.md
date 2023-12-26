@@ -8,5 +8,6 @@ diff
 生命周期
 key（除了v-for循环使用、）
 vue3
-vite
+vite 打包 快的原因 为什么选择
 UI组件库
+keep-alive 生命周期

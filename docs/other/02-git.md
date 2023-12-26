@@ -128,6 +128,54 @@ revert：同样回滚，这个回滚操作相当于一个提价，目标版本�
 + 切换分支之前请先清空修改文件（可以删除/提交）
 + 不要中文文件名，文件名只能是字母数字减号下划线
 
+
+### 1.13 常用命令事例
+
+```shell
+
+# 推送分支到远程
+git push --set-upstream origin feature_xxx
+
+# 删除本地分支
+git br -D feature_xxx
+
+# 删除远程分支
+git push origin --delete feature_xxx
+
+# 拉取远程分支到本地 / 并切换
+git co -b feature_xxx origin/feature_xxx
+
+# 清空工作区
+git clean -d -f
+git checkout .
+
+# 提交所有文件到工作区
+git add --all
+
+# 子模块
+git submodule init 初始化子模块
+git submodule update 更新子模块
+git submodule foreach git pull 拉取所有子模块
+
+# git submodule 更新到最新
+git submodule update --recursive --remote
+
+# 设置upstream
+git remote add upstream https://.....
+
+# 查看
+git remote -v
+
+# 取消
+git branch --unset-upstream
+
+# 拉取
+git fetch upstream
+
+git rebase feature_XXX
+```
+
+
 ## 2. git合作开发命令
 
 命令|含义
