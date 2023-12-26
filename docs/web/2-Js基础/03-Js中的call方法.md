@@ -213,11 +213,42 @@ Function.prototype.newBind = function (context = window, ...args1) {
   }
   const _this = this;
   return function F (...args2) {
+    const newArr = [...args1, ...args2];
     // 判断是否用于构造函数 如果是则使用new调用当前函数
     if (this instanceof F) {
-      return new _this(...args1, ...args2);
+      return new _this(...newArr);
     }
-    return _this.apply(context, args1.concat(args2));
+    return _this.apply(context, newArr);
   }
 }
+```
+
+```js
+Function.prototype.newBind = function (context = window, ...args1) {
+  if (this === Function.prototype) {
+    throw new TypeError('Error');
+  }
+  const _this = this;
+  return function F (...args2) {
+    const newArr = [...args1, ...args2];
+    // 判断是否用于构造函数 如果是则使用new调用当前函数
+    if (this instanceof F) {
+      return new _this(...newArr);
+    }
+    context = context || window;
+    const fn = Symbol('fn');
+    context[fn] = _this;
+    const result = context[fn](...newArr);
+    delete context[fn];
+    return result;
+  }
+}
+var name = 'yuhoo';
+const a = { name: 'liamhuo' };
+const b = function () {
+  console.log(this.name)
+}
+b(); // yuhoo
+const c = b.newBind(a);
+c(); // liamhuo
 ```

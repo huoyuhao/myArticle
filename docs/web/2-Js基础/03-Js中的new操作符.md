@@ -48,7 +48,7 @@ function newOperator (ctor, ...rest) {
   let newObj = Object.create(ctor.prototype);
 
   // let newObj = new Object();
-  // resultObj.__proto__ = ctor.prototype;
+  // newObj.__proto__ = ctor.prototype;
 
   // 3.生成的新对象会绑定到函数调用的`this`。
   // 获取到ctor函数返回结果
